@@ -1,0 +1,33 @@
+# ninja log v5
+1	11	0	bin/lexparse/(	30b4ead74bdce21c
+1	11	0	../src/lexparse/parser_sources.h	30b4ead74bdce21c
+1	11	0	bin/lexparse/)	30b4ead74bdce21c
+1	11	0	../src/generated/CalculatorLexer.cpp	30b4ead74bdce21c
+1	11	0	../src/generated/CalculatorLexer.h	30b4ead74bdce21c
+1	11	0	../src/generated/CalculatorParser.cpp	30b4ead74bdce21c
+1	11	0	../src/generated/CalculatorParser.h	30b4ead74bdce21c
+1	11	0	/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/bin/lexparse/(	30b4ead74bdce21c
+1	11	0	/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/src/lexparse/parser_sources.h	30b4ead74bdce21c
+1	11	0	/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/bin/lexparse/)	30b4ead74bdce21c
+1	11	0	/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/src/generated/CalculatorLexer.cpp	30b4ead74bdce21c
+1	11	0	/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/src/generated/CalculatorLexer.h	30b4ead74bdce21c
+1	11	0	/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/src/generated/CalculatorParser.cpp	30b4ead74bdce21c
+1	11	0	/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/src/generated/CalculatorParser.h	30b4ead74bdce21c
+11	1495	1661474977071083894	bin/CMakeFiles/calculator.dir/calculator.cpp.o	ed6952409701a694
+11	1556	1661474977132446711	bin/lexparse/CMakeFiles/parser_lib.dir/__/generated/CalculatorLexer.cpp.o	39a53785199f1218
+12	1580	1661474977156681248	bin/lexparse/CMakeFiles/parser_lib.dir/__/generated/CalculatorParser.cpp.o	c2ca36c02780d1c5
+1580	1669	1661474977253530487	bin/calculator	79040d066dd35a95
+2	8	0	bin/lexparse/(	30b4ead74bdce21c
+2	8	0	../src/lexparse/parser_sources.h	30b4ead74bdce21c
+2	8	0	bin/lexparse/)	30b4ead74bdce21c
+2	8	0	../src/generated/CalculatorLexer.cpp	30b4ead74bdce21c
+2	8	0	../src/generated/CalculatorLexer.h	30b4ead74bdce21c
+2	8	0	../src/generated/CalculatorParser.cpp	30b4ead74bdce21c
+2	8	0	../src/generated/CalculatorParser.h	30b4ead74bdce21c
+2	8	0	/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/bin/lexparse/(	30b4ead74bdce21c
+2	8	0	/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/src/lexparse/parser_sources.h	30b4ead74bdce21c
+2	8	0	/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/bin/lexparse/)	30b4ead74bdce21c
+2	8	0	/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/src/generated/CalculatorLexer.cpp	30b4ead74bdce21c
+2	8	0	/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/src/generated/CalculatorLexer.h	30b4ead74bdce21c
+2	8	0	/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/src/generated/CalculatorParser.cpp	30b4ead74bdce21c
+2	8	0	/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/src/generated/CalculatorParser.h	30b4ead74bdce21c

@@ -67,7 +67,7 @@ CMAKE_BINARY_DIR = "/Users/berginjack/Desktop/Github_Work/College Projects/CS_43
 
 # Special rule for the target test
 test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	@echo "Running external command ..."
 	/usr/local/Cellar/cmake/3.24.1/bin/ctest --force-new-ctest-process $(ARGS)
 .PHONY : test
 
@@ -77,7 +77,7 @@ test/fast: test
 
 # Special rule for the target edit_cache
 edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	@echo "Running external command ..."
 	/usr/local/Cellar/cmake/3.24.1/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
@@ -87,7 +87,7 @@ edit_cache/fast: edit_cache
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	@echo "Running external command ..."
 	/usr/local/Cellar/cmake/3.24.1/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
@@ -97,7 +97,7 @@ rebuild_cache/fast: rebuild_cache
 
 # Special rule for the target list_install_components
 list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+	@echo "Running external command ..."
 .PHONY : list_install_components
 
 # Special rule for the target list_install_components
@@ -106,37 +106,37 @@ list_install_components/fast: list_install_components
 
 # Special rule for the target install
 install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	@echo "Running external command ..."
 	/usr/local/Cellar/cmake/3.24.1/bin/cmake -P cmake_install.cmake
 .PHONY : install
 
 # Special rule for the target install
 install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	@echo "Running external command ..."
 	/usr/local/Cellar/cmake/3.24.1/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
 # Special rule for the target install/local
 install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	@echo "Running external command ..."
 	/usr/local/Cellar/cmake/3.24.1/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local
 
 # Special rule for the target install/local
 install/local/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	@echo "Running external command ..."
 	/usr/local/Cellar/cmake/3.24.1/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
 
 # Special rule for the target install/strip
 install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	@echo "Running external command ..."
 	/usr/local/Cellar/cmake/3.24.1/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip
 
 # Special rule for the target install/strip
 install/strip/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	@echo "Running external command ..."
 	/usr/local/Cellar/cmake/3.24.1/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
 
@@ -210,32 +210,6 @@ parser_lib/fast:
 	$(MAKE) $(MAKESILENT) -f bin/lexparse/CMakeFiles/parser_lib.dir/build.make bin/lexparse/CMakeFiles/parser_lib.dir/build
 .PHONY : parser_lib/fast
 
-#=============================================================================
-# Target rules for targets named Catch2
-
-# Build rule for target.
-Catch2: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Catch2
-.PHONY : Catch2
-
-# fast build rule for target.
-Catch2/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/catch2-build/src/CMakeFiles/Catch2.dir/build.make _deps/catch2-build/src/CMakeFiles/Catch2.dir/build
-.PHONY : Catch2/fast
-
-#=============================================================================
-# Target rules for targets named Catch2WithMain
-
-# Build rule for target.
-Catch2WithMain: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Catch2WithMain
-.PHONY : Catch2WithMain
-
-# fast build rule for target.
-Catch2WithMain/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/catch2-build/src/CMakeFiles/Catch2WithMain.dir/build.make _deps/catch2-build/src/CMakeFiles/Catch2WithMain.dir/build
-.PHONY : Catch2WithMain/fast
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -250,8 +224,6 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... test"
 	@echo "... generate_parser"
-	@echo "... Catch2"
-	@echo "... Catch2WithMain"
 	@echo "... calculator"
 	@echo "... parser_lib"
 .PHONY : help

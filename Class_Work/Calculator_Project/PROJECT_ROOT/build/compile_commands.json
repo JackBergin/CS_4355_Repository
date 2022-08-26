@@ -1,0 +1,17 @@
+[
+{
+  "directory": "/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/build/bin",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++  -I\"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/antlr/include\" -I\"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/src/generated\" -std=gnu++17 -o CMakeFiles/calculator.dir/calculator.cpp.o -c \"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/src/calculator.cpp\"",
+  "file": "/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/src/calculator.cpp"
+},
+{
+  "directory": "/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/build/bin/lexparse",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++  -I\"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/antlr/include\" -std=gnu++17 -o CMakeFiles/parser_lib.dir/__/generated/CalculatorLexer.cpp.o -c \"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/src/generated/CalculatorLexer.cpp\"",
+  "file": "/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/src/generated/CalculatorLexer.cpp"
+},
+{
+  "directory": "/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/build/bin/lexparse",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++  -I\"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/antlr/include\" -std=gnu++17 -o CMakeFiles/parser_lib.dir/__/generated/CalculatorParser.cpp.o -c \"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/src/generated/CalculatorParser.cpp\"",
+  "file": "/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/src/generated/CalculatorParser.cpp"
+}
+]

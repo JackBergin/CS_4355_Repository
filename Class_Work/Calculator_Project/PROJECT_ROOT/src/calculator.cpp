@@ -1,7 +1,8 @@
 #include <iostream>
 #include "antlr4-runtime.h"
-#include "CalculatorLexer.h"
-#include "CalculatorParser.h"
+#include "generated/CalculatorLexer.h"
+#include "generated/CalculatorParser.h"
+
 
 
 void parseArgs(int argc, const char* argv[]) {

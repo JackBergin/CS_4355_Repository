@@ -70,7 +70,7 @@ include bin/lexparse/CMakeFiles/parser_lib.dir/progress.make
 include bin/lexparse/CMakeFiles/parser_lib.dir/flags.make
 
 bin/lexparse/(:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir="/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Generating (, /Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/src/lexparse/parser_sources.h, )"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Generating (, /Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/src/lexparse/parser_sources.h, )"
 	cd "/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/src/lexparse" && /bin/sh generate.sh Calculator
 
 /Users/berginjack/Desktop/Github_Work/College\ Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/src/lexparse/parser_sources.h: bin/lexparse/(
@@ -82,29 +82,29 @@ bin/lexparse/): bin/lexparse/(
 bin/lexparse/CMakeFiles/parser_lib.dir/__/generated/CalculatorLexer.cpp.o: bin/lexparse/CMakeFiles/parser_lib.dir/flags.make
 bin/lexparse/CMakeFiles/parser_lib.dir/__/generated/CalculatorLexer.cpp.o: /Users/berginjack/Desktop/Github_Work/College\ Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/src/generated/CalculatorLexer.cpp
 bin/lexparse/CMakeFiles/parser_lib.dir/__/generated/CalculatorLexer.cpp.o: bin/lexparse/CMakeFiles/parser_lib.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object bin/lexparse/CMakeFiles/parser_lib.dir/__/generated/CalculatorLexer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object bin/lexparse/CMakeFiles/parser_lib.dir/__/generated/CalculatorLexer.cpp.o"
 	cd "/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/build/bin/lexparse" && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT bin/lexparse/CMakeFiles/parser_lib.dir/__/generated/CalculatorLexer.cpp.o -MF CMakeFiles/parser_lib.dir/__/generated/CalculatorLexer.cpp.o.d -o CMakeFiles/parser_lib.dir/__/generated/CalculatorLexer.cpp.o -c "/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/src/generated/CalculatorLexer.cpp"
 
 bin/lexparse/CMakeFiles/parser_lib.dir/__/generated/CalculatorLexer.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/parser_lib.dir/__/generated/CalculatorLexer.cpp.i"
+	@echo "Preprocessing CXX source to CMakeFiles/parser_lib.dir/__/generated/CalculatorLexer.cpp.i"
 	cd "/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/build/bin/lexparse" && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/src/generated/CalculatorLexer.cpp" > CMakeFiles/parser_lib.dir/__/generated/CalculatorLexer.cpp.i
 
 bin/lexparse/CMakeFiles/parser_lib.dir/__/generated/CalculatorLexer.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/parser_lib.dir/__/generated/CalculatorLexer.cpp.s"
+	@echo "Compiling CXX source to assembly CMakeFiles/parser_lib.dir/__/generated/CalculatorLexer.cpp.s"
 	cd "/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/build/bin/lexparse" && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/src/generated/CalculatorLexer.cpp" -o CMakeFiles/parser_lib.dir/__/generated/CalculatorLexer.cpp.s
 
 bin/lexparse/CMakeFiles/parser_lib.dir/__/generated/CalculatorParser.cpp.o: bin/lexparse/CMakeFiles/parser_lib.dir/flags.make
 bin/lexparse/CMakeFiles/parser_lib.dir/__/generated/CalculatorParser.cpp.o: /Users/berginjack/Desktop/Github_Work/College\ Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/src/generated/CalculatorParser.cpp
 bin/lexparse/CMakeFiles/parser_lib.dir/__/generated/CalculatorParser.cpp.o: bin/lexparse/CMakeFiles/parser_lib.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object bin/lexparse/CMakeFiles/parser_lib.dir/__/generated/CalculatorParser.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object bin/lexparse/CMakeFiles/parser_lib.dir/__/generated/CalculatorParser.cpp.o"
 	cd "/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/build/bin/lexparse" && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT bin/lexparse/CMakeFiles/parser_lib.dir/__/generated/CalculatorParser.cpp.o -MF CMakeFiles/parser_lib.dir/__/generated/CalculatorParser.cpp.o.d -o CMakeFiles/parser_lib.dir/__/generated/CalculatorParser.cpp.o -c "/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/src/generated/CalculatorParser.cpp"
 
 bin/lexparse/CMakeFiles/parser_lib.dir/__/generated/CalculatorParser.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/parser_lib.dir/__/generated/CalculatorParser.cpp.i"
+	@echo "Preprocessing CXX source to CMakeFiles/parser_lib.dir/__/generated/CalculatorParser.cpp.i"
 	cd "/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/build/bin/lexparse" && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/src/generated/CalculatorParser.cpp" > CMakeFiles/parser_lib.dir/__/generated/CalculatorParser.cpp.i
 
 bin/lexparse/CMakeFiles/parser_lib.dir/__/generated/CalculatorParser.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/parser_lib.dir/__/generated/CalculatorParser.cpp.s"
+	@echo "Compiling CXX source to assembly CMakeFiles/parser_lib.dir/__/generated/CalculatorParser.cpp.s"
 	cd "/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/build/bin/lexparse" && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/src/generated/CalculatorParser.cpp" -o CMakeFiles/parser_lib.dir/__/generated/CalculatorParser.cpp.s
 
 parser_lib: bin/lexparse/CMakeFiles/parser_lib.dir/__/generated/CalculatorLexer.cpp.o
@@ -123,6 +123,6 @@ bin/lexparse/CMakeFiles/parser_lib.dir/clean:
 bin/lexparse/CMakeFiles/parser_lib.dir/depend: bin/lexparse/(
 bin/lexparse/CMakeFiles/parser_lib.dir/depend: bin/lexparse/)
 bin/lexparse/CMakeFiles/parser_lib.dir/depend: /Users/berginjack/Desktop/Github_Work/College\ Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/src/lexparse/parser_sources.h
-	cd "/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/build" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT" "/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/src/lexparse" "/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/build" "/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/build/bin/lexparse" "/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/build/bin/lexparse/CMakeFiles/parser_lib.dir/DependInfo.cmake" --color=$(COLOR)
+	cd "/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/build" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT" "/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/src/lexparse" "/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/build" "/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/build/bin/lexparse" "/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/build/bin/lexparse/CMakeFiles/parser_lib.dir/DependInfo.cmake"
 .PHONY : bin/lexparse/CMakeFiles/parser_lib.dir/depend
 

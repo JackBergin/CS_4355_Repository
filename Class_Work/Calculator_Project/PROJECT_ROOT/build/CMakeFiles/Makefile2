@@ -78,38 +78,6 @@ clean: test/clean
 .PHONY : clean
 
 #=============================================================================
-# Directory level rules for directory _deps/catch2-build
-
-# Recursive "all" directory target.
-_deps/catch2-build/all: _deps/catch2-build/src/all
-.PHONY : _deps/catch2-build/all
-
-# Recursive "preinstall" directory target.
-_deps/catch2-build/preinstall: _deps/catch2-build/src/preinstall
-.PHONY : _deps/catch2-build/preinstall
-
-# Recursive "clean" directory target.
-_deps/catch2-build/clean: _deps/catch2-build/src/clean
-.PHONY : _deps/catch2-build/clean
-
-#=============================================================================
-# Directory level rules for directory _deps/catch2-build/src
-
-# Recursive "all" directory target.
-_deps/catch2-build/src/all: _deps/catch2-build/src/CMakeFiles/Catch2.dir/all
-_deps/catch2-build/src/all: _deps/catch2-build/src/CMakeFiles/Catch2WithMain.dir/all
-.PHONY : _deps/catch2-build/src/all
-
-# Recursive "preinstall" directory target.
-_deps/catch2-build/src/preinstall:
-.PHONY : _deps/catch2-build/src/preinstall
-
-# Recursive "clean" directory target.
-_deps/catch2-build/src/clean: _deps/catch2-build/src/CMakeFiles/Catch2.dir/clean
-_deps/catch2-build/src/clean: _deps/catch2-build/src/CMakeFiles/Catch2WithMain.dir/clean
-.PHONY : _deps/catch2-build/src/clean
-
-#=============================================================================
 # Directory level rules for directory bin
 
 # Recursive "all" directory target.
@@ -147,15 +115,15 @@ bin/lexparse/clean: bin/lexparse/CMakeFiles/parser_lib.dir/clean
 # Directory level rules for directory test
 
 # Recursive "all" directory target.
-test/all: _deps/catch2-build/all
+test/all:
 .PHONY : test/all
 
 # Recursive "preinstall" directory target.
-test/preinstall: _deps/catch2-build/preinstall
+test/preinstall:
 .PHONY : test/preinstall
 
 # Recursive "clean" directory target.
-test/clean: _deps/catch2-build/clean
+test/clean:
 .PHONY : test/clean
 
 #=============================================================================
@@ -165,7 +133,7 @@ test/clean: _deps/catch2-build/clean
 bin/CMakeFiles/calculator.dir/all: bin/lexparse/CMakeFiles/parser_lib.dir/all
 	$(MAKE) $(MAKESILENT) -f bin/CMakeFiles/calculator.dir/build.make bin/CMakeFiles/calculator.dir/depend
 	$(MAKE) $(MAKESILENT) -f bin/CMakeFiles/calculator.dir/build.make bin/CMakeFiles/calculator.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/build/CMakeFiles" --progress-num=80,81 "Built target calculator"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/build/CMakeFiles" --progress-num=1,2 "Built target calculator"
 .PHONY : bin/CMakeFiles/calculator.dir/all
 
 # Build rule for subdir invocation for target.
@@ -191,7 +159,7 @@ bin/CMakeFiles/calculator.dir/clean:
 bin/lexparse/CMakeFiles/generate_parser.dir/all:
 	$(MAKE) $(MAKESILENT) -f bin/lexparse/CMakeFiles/generate_parser.dir/build.make bin/lexparse/CMakeFiles/generate_parser.dir/depend
 	$(MAKE) $(MAKESILENT) -f bin/lexparse/CMakeFiles/generate_parser.dir/build.make bin/lexparse/CMakeFiles/generate_parser.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/build/CMakeFiles" --progress-num=82 "Built target generate_parser"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/build/CMakeFiles" --progress-num=3 "Built target generate_parser"
 .PHONY : bin/lexparse/CMakeFiles/generate_parser.dir/all
 
 # Build rule for subdir invocation for target.
@@ -217,7 +185,7 @@ bin/lexparse/CMakeFiles/generate_parser.dir/clean:
 bin/lexparse/CMakeFiles/parser_lib.dir/all:
 	$(MAKE) $(MAKESILENT) -f bin/lexparse/CMakeFiles/parser_lib.dir/build.make bin/lexparse/CMakeFiles/parser_lib.dir/depend
 	$(MAKE) $(MAKESILENT) -f bin/lexparse/CMakeFiles/parser_lib.dir/build.make bin/lexparse/CMakeFiles/parser_lib.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/build/CMakeFiles" --progress-num=83,84,85 "Built target parser_lib"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/build/CMakeFiles" --progress-num=4,5,6 "Built target parser_lib"
 .PHONY : bin/lexparse/CMakeFiles/parser_lib.dir/all
 
 # Build rule for subdir invocation for target.
@@ -235,58 +203,6 @@ parser_lib: bin/lexparse/CMakeFiles/parser_lib.dir/rule
 bin/lexparse/CMakeFiles/parser_lib.dir/clean:
 	$(MAKE) $(MAKESILENT) -f bin/lexparse/CMakeFiles/parser_lib.dir/build.make bin/lexparse/CMakeFiles/parser_lib.dir/clean
 .PHONY : bin/lexparse/CMakeFiles/parser_lib.dir/clean
-
-#=============================================================================
-# Target rules for target _deps/catch2-build/src/CMakeFiles/Catch2.dir
-
-# All Build rule for target.
-_deps/catch2-build/src/CMakeFiles/Catch2.dir/all:
-	$(MAKE) $(MAKESILENT) -f _deps/catch2-build/src/CMakeFiles/Catch2.dir/build.make _deps/catch2-build/src/CMakeFiles/Catch2.dir/depend
-	$(MAKE) $(MAKESILENT) -f _deps/catch2-build/src/CMakeFiles/Catch2.dir/build.make _deps/catch2-build/src/CMakeFiles/Catch2.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/build/CMakeFiles" --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77 "Built target Catch2"
-.PHONY : _deps/catch2-build/src/CMakeFiles/Catch2.dir/all
-
-# Build rule for subdir invocation for target.
-_deps/catch2-build/src/CMakeFiles/Catch2.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/build/CMakeFiles" 77
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/catch2-build/src/CMakeFiles/Catch2.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/build/CMakeFiles" 0
-.PHONY : _deps/catch2-build/src/CMakeFiles/Catch2.dir/rule
-
-# Convenience name for target.
-Catch2: _deps/catch2-build/src/CMakeFiles/Catch2.dir/rule
-.PHONY : Catch2
-
-# clean rule for target.
-_deps/catch2-build/src/CMakeFiles/Catch2.dir/clean:
-	$(MAKE) $(MAKESILENT) -f _deps/catch2-build/src/CMakeFiles/Catch2.dir/build.make _deps/catch2-build/src/CMakeFiles/Catch2.dir/clean
-.PHONY : _deps/catch2-build/src/CMakeFiles/Catch2.dir/clean
-
-#=============================================================================
-# Target rules for target _deps/catch2-build/src/CMakeFiles/Catch2WithMain.dir
-
-# All Build rule for target.
-_deps/catch2-build/src/CMakeFiles/Catch2WithMain.dir/all: _deps/catch2-build/src/CMakeFiles/Catch2.dir/all
-	$(MAKE) $(MAKESILENT) -f _deps/catch2-build/src/CMakeFiles/Catch2WithMain.dir/build.make _deps/catch2-build/src/CMakeFiles/Catch2WithMain.dir/depend
-	$(MAKE) $(MAKESILENT) -f _deps/catch2-build/src/CMakeFiles/Catch2WithMain.dir/build.make _deps/catch2-build/src/CMakeFiles/Catch2WithMain.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/build/CMakeFiles" --progress-num=78,79 "Built target Catch2WithMain"
-.PHONY : _deps/catch2-build/src/CMakeFiles/Catch2WithMain.dir/all
-
-# Build rule for subdir invocation for target.
-_deps/catch2-build/src/CMakeFiles/Catch2WithMain.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/build/CMakeFiles" 79
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/catch2-build/src/CMakeFiles/Catch2WithMain.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/build/CMakeFiles" 0
-.PHONY : _deps/catch2-build/src/CMakeFiles/Catch2WithMain.dir/rule
-
-# Convenience name for target.
-Catch2WithMain: _deps/catch2-build/src/CMakeFiles/Catch2WithMain.dir/rule
-.PHONY : Catch2WithMain
-
-# clean rule for target.
-_deps/catch2-build/src/CMakeFiles/Catch2WithMain.dir/clean:
-	$(MAKE) $(MAKESILENT) -f _deps/catch2-build/src/CMakeFiles/Catch2WithMain.dir/build.make _deps/catch2-build/src/CMakeFiles/Catch2WithMain.dir/clean
-.PHONY : _deps/catch2-build/src/CMakeFiles/Catch2WithMain.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

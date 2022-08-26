@@ -1,0 +1,1459 @@
+## This file contains all the build statements describing the
+# compilation DAG.
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# 
+# Which is the root file.
+# =============================================================================
+
+# =============================================================================
+# Project: expressions
+# Configurations: Debug
+# =============================================================================
+
+#############################################
+# Minimal version of Ninja required by this file
+
+ninja_required_version = 1.5
+
+
+#############################################
+# Set configuration variable for custom commands.
+
+CONFIGURATION = Debug
+# =============================================================================
+# Include auxiliary files.
+
+
+#############################################
+# Include rules file.
+
+include CMakeFiles/rules.ninja
+
+# =============================================================================
+
+#############################################
+# Logical path to working directory; prefix for absolute paths.
+
+cmake_ninja_workdir = /Users/berginjack/Desktop/Github_Work/College$ Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/
+
+#############################################
+# Utility command for test
+
+build CMakeFiles/test.util: CUSTOM_COMMAND
+  COMMAND = cd "/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug" && /Applications/CLion.app/Contents/bin/cmake/mac/bin/ctest --force-new-ctest-process
+  DESC = Running tests...
+  pool = console
+  restat = 1
+
+build test: phony CMakeFiles/test.util
+
+
+#############################################
+# Utility command for edit_cache
+
+build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd "/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug" && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build edit_cache: phony CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd "/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug" && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT" -B"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug"
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build rebuild_cache: phony CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build CMakeFiles/install.util: CUSTOM_COMMAND all
+  COMMAND = cd "/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug" && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -P cmake_install.cmake
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build install: phony CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build CMakeFiles/install/local.util: CUSTOM_COMMAND all
+  COMMAND = cd "/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug" && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build install/local: phony CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build CMakeFiles/install/strip.util: CUSTOM_COMMAND all
+  COMMAND = cd "/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug" && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build install/strip: phony CMakeFiles/install/strip.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for EXECUTABLE target calculator
+
+
+#############################################
+# Order-only phony target for calculator
+
+build cmake_object_order_depends_target_calculator: phony || cmake_object_order_depends_target_parser_lib
+
+build bin/CMakeFiles/calculator.dir/calculator.cpp.o: CXX_COMPILER__calculator_Debug /Users/berginjack/Desktop/Github_Work/College$ Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/src/calculator.cpp || cmake_object_order_depends_target_calculator
+  DEP_FILE = bin/CMakeFiles/calculator.dir/calculator.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
+  INCLUDES = -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/antlr/include" -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/src/generated"
+  OBJECT_DIR = bin/CMakeFiles/calculator.dir
+  OBJECT_FILE_DIR = bin/CMakeFiles/calculator.dir
+  TARGET_COMPILE_PDB = bin/CMakeFiles/calculator.dir/
+  TARGET_PDB = bin/calculator.pdb
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target calculator
+
+
+#############################################
+# Link the executable bin/calculator
+
+build bin/calculator: CXX_EXECUTABLE_LINKER__calculator_Debug bin/lexparse/CMakeFiles/parser_lib.dir/__/generated/CalculatorLexer.cpp.o bin/lexparse/CMakeFiles/parser_lib.dir/__/generated/CalculatorParser.cpp.o bin/CMakeFiles/calculator.dir/calculator.cpp.o | ../antlr/lib/libantlr4-runtime.a || bin/lexparse/parser_lib
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk
+  LINK_LIBRARIES = ../antlr/lib/libantlr4-runtime.a
+  OBJECT_DIR = bin/CMakeFiles/calculator.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_COMPILE_PDB = bin/CMakeFiles/calculator.dir/
+  TARGET_FILE = bin/calculator
+  TARGET_PDB = bin/calculator.pdb
+
+
+#############################################
+# Utility command for test
+
+build bin/CMakeFiles/test.util: CUSTOM_COMMAND
+  COMMAND = cd "/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/bin" && /Applications/CLion.app/Contents/bin/cmake/mac/bin/ctest --force-new-ctest-process
+  DESC = Running tests...
+  pool = console
+  restat = 1
+
+build bin/test: phony bin/CMakeFiles/test.util
+
+
+#############################################
+# Utility command for edit_cache
+
+build bin/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd "/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/bin" && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build bin/edit_cache: phony bin/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build bin/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd "/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/bin" && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT" -B"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug"
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build bin/rebuild_cache: phony bin/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build bin/list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build bin/CMakeFiles/install.util: CUSTOM_COMMAND bin/all
+  COMMAND = cd "/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/bin" && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -P cmake_install.cmake
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build bin/install: phony bin/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build bin/CMakeFiles/install/local.util: CUSTOM_COMMAND bin/all
+  COMMAND = cd "/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/bin" && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build bin/install/local: phony bin/CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build bin/CMakeFiles/install/strip.util: CUSTOM_COMMAND bin/all
+  COMMAND = cd "/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/bin" && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build bin/install/strip: phony bin/CMakeFiles/install/strip.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/src/CMakeLists.txt
+# =============================================================================
+
+
+#############################################
+# Utility command for generate_parser
+
+build bin/lexparse/generate_parser: phony bin/lexparse/CMakeFiles/generate_parser bin/lexparse/( ../src/lexparse/parser_sources.h bin/lexparse/) ../src/generated/CalculatorLexer.cpp ../src/generated/CalculatorLexer.h ../src/generated/CalculatorParser.cpp ../src/generated/CalculatorParser.h
+
+# =============================================================================
+# Object build statements for OBJECT_LIBRARY target parser_lib
+
+
+#############################################
+# Order-only phony target for parser_lib
+
+build cmake_object_order_depends_target_parser_lib: phony || ../src/generated/CalculatorLexer.cpp ../src/generated/CalculatorLexer.h ../src/generated/CalculatorParser.cpp ../src/generated/CalculatorParser.h ../src/lexparse/parser_sources.h bin/lexparse/( bin/lexparse/)
+
+build bin/lexparse/CMakeFiles/parser_lib.dir/__/generated/CalculatorLexer.cpp.o: CXX_COMPILER__parser_lib_Debug /Users/berginjack/Desktop/Github_Work/College$ Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/src/generated/CalculatorLexer.cpp || cmake_object_order_depends_target_parser_lib
+  DEP_FILE = bin/lexparse/CMakeFiles/parser_lib.dir/__/generated/CalculatorLexer.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
+  INCLUDES = -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/antlr/include"
+  OBJECT_DIR = bin/lexparse/CMakeFiles/parser_lib.dir
+  OBJECT_FILE_DIR = bin/lexparse/CMakeFiles/parser_lib.dir/__/generated
+  TARGET_COMPILE_PDB = bin/lexparse/CMakeFiles/parser_lib.dir/
+  TARGET_PDB = ""
+
+build bin/lexparse/CMakeFiles/parser_lib.dir/__/generated/CalculatorParser.cpp.o: CXX_COMPILER__parser_lib_Debug /Users/berginjack/Desktop/Github_Work/College$ Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/src/generated/CalculatorParser.cpp || cmake_object_order_depends_target_parser_lib
+  DEP_FILE = bin/lexparse/CMakeFiles/parser_lib.dir/__/generated/CalculatorParser.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
+  INCLUDES = -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/antlr/include"
+  OBJECT_DIR = bin/lexparse/CMakeFiles/parser_lib.dir
+  OBJECT_FILE_DIR = bin/lexparse/CMakeFiles/parser_lib.dir/__/generated
+  TARGET_COMPILE_PDB = bin/lexparse/CMakeFiles/parser_lib.dir/
+  TARGET_PDB = ""
+
+
+
+#############################################
+# Object library parser_lib
+
+build bin/lexparse/parser_lib: phony bin/lexparse/CMakeFiles/parser_lib.dir/__/generated/CalculatorLexer.cpp.o bin/lexparse/CMakeFiles/parser_lib.dir/__/generated/CalculatorParser.cpp.o
+
+
+#############################################
+# Utility command for test
+
+build bin/lexparse/CMakeFiles/test.util: CUSTOM_COMMAND
+  COMMAND = cd "/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/bin/lexparse" && /Applications/CLion.app/Contents/bin/cmake/mac/bin/ctest --force-new-ctest-process
+  DESC = Running tests...
+  pool = console
+  restat = 1
+
+build bin/lexparse/test: phony bin/lexparse/CMakeFiles/test.util
+
+
+#############################################
+# Utility command for edit_cache
+
+build bin/lexparse/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd "/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/bin/lexparse" && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build bin/lexparse/edit_cache: phony bin/lexparse/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build bin/lexparse/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd "/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/bin/lexparse" && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT" -B"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug"
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build bin/lexparse/rebuild_cache: phony bin/lexparse/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build bin/lexparse/list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build bin/lexparse/CMakeFiles/install.util: CUSTOM_COMMAND bin/lexparse/all
+  COMMAND = cd "/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/bin/lexparse" && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -P cmake_install.cmake
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build bin/lexparse/install: phony bin/lexparse/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build bin/lexparse/CMakeFiles/install/local.util: CUSTOM_COMMAND bin/lexparse/all
+  COMMAND = cd "/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/bin/lexparse" && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build bin/lexparse/install/local: phony bin/lexparse/CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build bin/lexparse/CMakeFiles/install/strip.util: CUSTOM_COMMAND bin/lexparse/all
+  COMMAND = cd "/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/bin/lexparse" && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build bin/lexparse/install/strip: phony bin/lexparse/CMakeFiles/install/strip.util
+
+
+#############################################
+# Phony custom command for bin/lexparse/CMakeFiles/generate_parser
+
+build bin/lexparse/CMakeFiles/generate_parser | ${cmake_ninja_workdir}bin/lexparse/CMakeFiles/generate_parser: phony ../src/lexparse/parser_sources.h
+
+
+#############################################
+# Custom command for bin/lexparse/(
+
+build bin/lexparse/( ../src/lexparse/parser_sources.h bin/lexparse/) ../src/generated/CalculatorLexer.cpp ../src/generated/CalculatorLexer.h ../src/generated/CalculatorParser.cpp ../src/generated/CalculatorParser.h | ${cmake_ninja_workdir}bin/lexparse/( ${cmake_ninja_workdir}../src/lexparse/parser_sources.h ${cmake_ninja_workdir}bin/lexparse/) ${cmake_ninja_workdir}../src/generated/CalculatorLexer.cpp ${cmake_ninja_workdir}../src/generated/CalculatorLexer.h ${cmake_ninja_workdir}../src/generated/CalculatorParser.cpp ${cmake_ninja_workdir}../src/generated/CalculatorParser.h: CUSTOM_COMMAND
+  COMMAND = cd "/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/src/lexparse" && /bin/sh generate.sh Calculator
+  DESC = Generating (, ../../../src/lexparse/parser_sources.h, )
+  restat = 1
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/CMakeLists.txt
+# =============================================================================
+
+
+#############################################
+# Utility command for test
+
+build test/CMakeFiles/test.util: CUSTOM_COMMAND
+  COMMAND = cd "/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/test" && /Applications/CLion.app/Contents/bin/cmake/mac/bin/ctest --force-new-ctest-process
+  DESC = Running tests...
+  pool = console
+  restat = 1
+
+build test/test: phony test/CMakeFiles/test.util
+
+
+#############################################
+# Utility command for edit_cache
+
+build test/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd "/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/test" && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build test/edit_cache: phony test/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build test/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd "/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/test" && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT" -B"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug"
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build test/rebuild_cache: phony test/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build test/list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build test/CMakeFiles/install.util: CUSTOM_COMMAND test/all
+  COMMAND = cd "/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/test" && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -P cmake_install.cmake
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build test/install: phony test/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build test/CMakeFiles/install/local.util: CUSTOM_COMMAND test/all
+  COMMAND = cd "/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/test" && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build test/install/local: phony test/CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build test/CMakeFiles/install/strip.util: CUSTOM_COMMAND test/all
+  COMMAND = cd "/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/test" && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build test/install/strip: phony test/CMakeFiles/install/strip.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/test/CMakeLists.txt
+# =============================================================================
+
+
+#############################################
+# Utility command for test
+
+build _deps/catch2-build/CMakeFiles/test.util: CUSTOM_COMMAND
+  COMMAND = cd "/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-build" && /Applications/CLion.app/Contents/bin/cmake/mac/bin/ctest --force-new-ctest-process
+  DESC = Running tests...
+  pool = console
+  restat = 1
+
+build _deps/catch2-build/test: phony _deps/catch2-build/CMakeFiles/test.util
+
+
+#############################################
+# Utility command for edit_cache
+
+build _deps/catch2-build/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd "/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-build" && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build _deps/catch2-build/edit_cache: phony _deps/catch2-build/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build _deps/catch2-build/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd "/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-build" && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT" -B"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug"
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build _deps/catch2-build/rebuild_cache: phony _deps/catch2-build/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build _deps/catch2-build/list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build _deps/catch2-build/CMakeFiles/install.util: CUSTOM_COMMAND _deps/catch2-build/all
+  COMMAND = cd "/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-build" && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -P cmake_install.cmake
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build _deps/catch2-build/install: phony _deps/catch2-build/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build _deps/catch2-build/CMakeFiles/install/local.util: CUSTOM_COMMAND _deps/catch2-build/all
+  COMMAND = cd "/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-build" && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build _deps/catch2-build/install/local: phony _deps/catch2-build/CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build _deps/catch2-build/CMakeFiles/install/strip.util: CUSTOM_COMMAND _deps/catch2-build/all
+  COMMAND = cd "/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-build" && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build _deps/catch2-build/install/strip: phony _deps/catch2-build/CMakeFiles/install/strip.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target Catch2
+
+
+#############################################
+# Order-only phony target for Catch2
+
+build cmake_object_order_depends_target_Catch2: phony || _deps/catch2-build/src/CMakeFiles/Catch2.dir
+
+build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_automake.cpp.o: CXX_COMPILER__Catch2_Debug /Users/berginjack/Desktop/Github_Work/College$ Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/reporters/catch_reporter_automake.cpp || cmake_object_order_depends_target_Catch2
+  DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_automake.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
+  INCLUDES = -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/.." -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/generated-includes"
+  OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
+  OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters
+  TARGET_COMPILE_PDB = _deps/catch2-build/src/CMakeFiles/Catch2.dir/Catch2.pdb
+  TARGET_PDB = _deps/catch2-build/src/libCatch2d.pdb
+
+build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_combined_tu.cpp.o: CXX_COMPILER__Catch2_Debug /Users/berginjack/Desktop/Github_Work/College$ Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/reporters/catch_reporter_combined_tu.cpp || cmake_object_order_depends_target_Catch2
+  DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_combined_tu.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
+  INCLUDES = -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/.." -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/generated-includes"
+  OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
+  OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters
+  TARGET_COMPILE_PDB = _deps/catch2-build/src/CMakeFiles/Catch2.dir/Catch2.pdb
+  TARGET_PDB = _deps/catch2-build/src/libCatch2d.pdb
+
+build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_common_base.cpp.o: CXX_COMPILER__Catch2_Debug /Users/berginjack/Desktop/Github_Work/College$ Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/reporters/catch_reporter_common_base.cpp || cmake_object_order_depends_target_Catch2
+  DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_common_base.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
+  INCLUDES = -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/.." -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/generated-includes"
+  OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
+  OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters
+  TARGET_COMPILE_PDB = _deps/catch2-build/src/CMakeFiles/Catch2.dir/Catch2.pdb
+  TARGET_PDB = _deps/catch2-build/src/libCatch2d.pdb
+
+build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_compact.cpp.o: CXX_COMPILER__Catch2_Debug /Users/berginjack/Desktop/Github_Work/College$ Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/reporters/catch_reporter_compact.cpp || cmake_object_order_depends_target_Catch2
+  DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_compact.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
+  INCLUDES = -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/.." -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/generated-includes"
+  OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
+  OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters
+  TARGET_COMPILE_PDB = _deps/catch2-build/src/CMakeFiles/Catch2.dir/Catch2.pdb
+  TARGET_PDB = _deps/catch2-build/src/libCatch2d.pdb
+
+build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_console.cpp.o: CXX_COMPILER__Catch2_Debug /Users/berginjack/Desktop/Github_Work/College$ Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/reporters/catch_reporter_console.cpp || cmake_object_order_depends_target_Catch2
+  DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_console.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
+  INCLUDES = -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/.." -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/generated-includes"
+  OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
+  OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters
+  TARGET_COMPILE_PDB = _deps/catch2-build/src/CMakeFiles/Catch2.dir/Catch2.pdb
+  TARGET_PDB = _deps/catch2-build/src/libCatch2d.pdb
+
+build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_cumulative_base.cpp.o: CXX_COMPILER__Catch2_Debug /Users/berginjack/Desktop/Github_Work/College$ Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/reporters/catch_reporter_cumulative_base.cpp || cmake_object_order_depends_target_Catch2
+  DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_cumulative_base.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
+  INCLUDES = -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/.." -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/generated-includes"
+  OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
+  OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters
+  TARGET_COMPILE_PDB = _deps/catch2-build/src/CMakeFiles/Catch2.dir/Catch2.pdb
+  TARGET_PDB = _deps/catch2-build/src/libCatch2d.pdb
+
+build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_junit.cpp.o: CXX_COMPILER__Catch2_Debug /Users/berginjack/Desktop/Github_Work/College$ Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/reporters/catch_reporter_junit.cpp || cmake_object_order_depends_target_Catch2
+  DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_junit.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
+  INCLUDES = -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/.." -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/generated-includes"
+  OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
+  OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters
+  TARGET_COMPILE_PDB = _deps/catch2-build/src/CMakeFiles/Catch2.dir/Catch2.pdb
+  TARGET_PDB = _deps/catch2-build/src/libCatch2d.pdb
+
+build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_multi.cpp.o: CXX_COMPILER__Catch2_Debug /Users/berginjack/Desktop/Github_Work/College$ Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/reporters/catch_reporter_multi.cpp || cmake_object_order_depends_target_Catch2
+  DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_multi.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
+  INCLUDES = -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/.." -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/generated-includes"
+  OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
+  OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters
+  TARGET_COMPILE_PDB = _deps/catch2-build/src/CMakeFiles/Catch2.dir/Catch2.pdb
+  TARGET_PDB = _deps/catch2-build/src/libCatch2d.pdb
+
+build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_registrars.cpp.o: CXX_COMPILER__Catch2_Debug /Users/berginjack/Desktop/Github_Work/College$ Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/reporters/catch_reporter_registrars.cpp || cmake_object_order_depends_target_Catch2
+  DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_registrars.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
+  INCLUDES = -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/.." -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/generated-includes"
+  OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
+  OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters
+  TARGET_COMPILE_PDB = _deps/catch2-build/src/CMakeFiles/Catch2.dir/Catch2.pdb
+  TARGET_PDB = _deps/catch2-build/src/libCatch2d.pdb
+
+build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_sonarqube.cpp.o: CXX_COMPILER__Catch2_Debug /Users/berginjack/Desktop/Github_Work/College$ Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/reporters/catch_reporter_sonarqube.cpp || cmake_object_order_depends_target_Catch2
+  DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_sonarqube.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
+  INCLUDES = -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/.." -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/generated-includes"
+  OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
+  OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters
+  TARGET_COMPILE_PDB = _deps/catch2-build/src/CMakeFiles/Catch2.dir/Catch2.pdb
+  TARGET_PDB = _deps/catch2-build/src/libCatch2d.pdb
+
+build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_streaming_base.cpp.o: CXX_COMPILER__Catch2_Debug /Users/berginjack/Desktop/Github_Work/College$ Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/reporters/catch_reporter_streaming_base.cpp || cmake_object_order_depends_target_Catch2
+  DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_streaming_base.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
+  INCLUDES = -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/.." -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/generated-includes"
+  OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
+  OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters
+  TARGET_COMPILE_PDB = _deps/catch2-build/src/CMakeFiles/Catch2.dir/Catch2.pdb
+  TARGET_PDB = _deps/catch2-build/src/libCatch2d.pdb
+
+build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_tap.cpp.o: CXX_COMPILER__Catch2_Debug /Users/berginjack/Desktop/Github_Work/College$ Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/reporters/catch_reporter_tap.cpp || cmake_object_order_depends_target_Catch2
+  DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_tap.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
+  INCLUDES = -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/.." -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/generated-includes"
+  OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
+  OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters
+  TARGET_COMPILE_PDB = _deps/catch2-build/src/CMakeFiles/Catch2.dir/Catch2.pdb
+  TARGET_PDB = _deps/catch2-build/src/libCatch2d.pdb
+
+build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_teamcity.cpp.o: CXX_COMPILER__Catch2_Debug /Users/berginjack/Desktop/Github_Work/College$ Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/reporters/catch_reporter_teamcity.cpp || cmake_object_order_depends_target_Catch2
+  DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_teamcity.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
+  INCLUDES = -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/.." -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/generated-includes"
+  OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
+  OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters
+  TARGET_COMPILE_PDB = _deps/catch2-build/src/CMakeFiles/Catch2.dir/Catch2.pdb
+  TARGET_PDB = _deps/catch2-build/src/libCatch2d.pdb
+
+build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_xml.cpp.o: CXX_COMPILER__Catch2_Debug /Users/berginjack/Desktop/Github_Work/College$ Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/reporters/catch_reporter_xml.cpp || cmake_object_order_depends_target_Catch2
+  DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_xml.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
+  INCLUDES = -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/.." -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/generated-includes"
+  OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
+  OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters
+  TARGET_COMPILE_PDB = _deps/catch2-build/src/CMakeFiles/Catch2.dir/Catch2.pdb
+  TARGET_PDB = _deps/catch2-build/src/libCatch2d.pdb
+
+build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/catch_approx.cpp.o: CXX_COMPILER__Catch2_Debug /Users/berginjack/Desktop/Github_Work/College$ Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/catch_approx.cpp || cmake_object_order_depends_target_Catch2
+  DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/catch_approx.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
+  INCLUDES = -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/.." -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/generated-includes"
+  OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
+  OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2
+  TARGET_COMPILE_PDB = _deps/catch2-build/src/CMakeFiles/Catch2.dir/Catch2.pdb
+  TARGET_PDB = _deps/catch2-build/src/libCatch2d.pdb
+
+build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_assertion_handler.cpp.o: CXX_COMPILER__Catch2_Debug /Users/berginjack/Desktop/Github_Work/College$ Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/internal/catch_assertion_handler.cpp || cmake_object_order_depends_target_Catch2
+  DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_assertion_handler.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
+  INCLUDES = -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/.." -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/generated-includes"
+  OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
+  OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal
+  TARGET_COMPILE_PDB = _deps/catch2-build/src/CMakeFiles/Catch2.dir/Catch2.pdb
+  TARGET_PDB = _deps/catch2-build/src/libCatch2d.pdb
+
+build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/catch_assertion_result.cpp.o: CXX_COMPILER__Catch2_Debug /Users/berginjack/Desktop/Github_Work/College$ Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/catch_assertion_result.cpp || cmake_object_order_depends_target_Catch2
+  DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/catch_assertion_result.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
+  INCLUDES = -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/.." -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/generated-includes"
+  OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
+  OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2
+  TARGET_COMPILE_PDB = _deps/catch2-build/src/CMakeFiles/Catch2.dir/Catch2.pdb
+  TARGET_PDB = _deps/catch2-build/src/libCatch2d.pdb
+
+build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/matchers/internal/catch_matchers_combined_tu.cpp.o: CXX_COMPILER__Catch2_Debug /Users/berginjack/Desktop/Github_Work/College$ Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/matchers/internal/catch_matchers_combined_tu.cpp || cmake_object_order_depends_target_Catch2
+  DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/matchers/internal/catch_matchers_combined_tu.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
+  INCLUDES = -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/.." -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/generated-includes"
+  OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
+  OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/matchers/internal
+  TARGET_COMPILE_PDB = _deps/catch2-build/src/CMakeFiles/Catch2.dir/Catch2.pdb
+  TARGET_PDB = _deps/catch2-build/src/libCatch2d.pdb
+
+build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_clara.cpp.o: CXX_COMPILER__Catch2_Debug /Users/berginjack/Desktop/Github_Work/College$ Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/internal/catch_clara.cpp || cmake_object_order_depends_target_Catch2
+  DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_clara.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
+  INCLUDES = -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/.." -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/generated-includes"
+  OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
+  OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal
+  TARGET_COMPILE_PDB = _deps/catch2-build/src/CMakeFiles/Catch2.dir/Catch2.pdb
+  TARGET_PDB = _deps/catch2-build/src/libCatch2d.pdb
+
+build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_commandline.cpp.o: CXX_COMPILER__Catch2_Debug /Users/berginjack/Desktop/Github_Work/College$ Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/internal/catch_commandline.cpp || cmake_object_order_depends_target_Catch2
+  DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_commandline.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
+  INCLUDES = -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/.." -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/generated-includes"
+  OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
+  OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal
+  TARGET_COMPILE_PDB = _deps/catch2-build/src/CMakeFiles/Catch2.dir/Catch2.pdb
+  TARGET_PDB = _deps/catch2-build/src/libCatch2d.pdb
+
+build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_source_line_info.cpp.o: CXX_COMPILER__Catch2_Debug /Users/berginjack/Desktop/Github_Work/College$ Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/internal/catch_source_line_info.cpp || cmake_object_order_depends_target_Catch2
+  DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_source_line_info.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
+  INCLUDES = -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/.." -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/generated-includes"
+  OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
+  OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal
+  TARGET_COMPILE_PDB = _deps/catch2-build/src/CMakeFiles/Catch2.dir/Catch2.pdb
+  TARGET_PDB = _deps/catch2-build/src/libCatch2d.pdb
+
+build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/catch_config.cpp.o: CXX_COMPILER__Catch2_Debug /Users/berginjack/Desktop/Github_Work/College$ Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/catch_config.cpp || cmake_object_order_depends_target_Catch2
+  DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/catch_config.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
+  INCLUDES = -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/.." -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/generated-includes"
+  OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
+  OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2
+  TARGET_COMPILE_PDB = _deps/catch2-build/src/CMakeFiles/Catch2.dir/Catch2.pdb
+  TARGET_PDB = _deps/catch2-build/src/libCatch2d.pdb
+
+build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_case_insensitive_comparisons.cpp.o: CXX_COMPILER__Catch2_Debug /Users/berginjack/Desktop/Github_Work/College$ Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/internal/catch_case_insensitive_comparisons.cpp || cmake_object_order_depends_target_Catch2
+  DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_case_insensitive_comparisons.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
+  INCLUDES = -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/.." -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/generated-includes"
+  OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
+  OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal
+  TARGET_COMPILE_PDB = _deps/catch2-build/src/CMakeFiles/Catch2.dir/Catch2.pdb
+  TARGET_PDB = _deps/catch2-build/src/libCatch2d.pdb
+
+build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_console_colour.cpp.o: CXX_COMPILER__Catch2_Debug /Users/berginjack/Desktop/Github_Work/College$ Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/internal/catch_console_colour.cpp || cmake_object_order_depends_target_Catch2
+  DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_console_colour.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
+  INCLUDES = -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/.." -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/generated-includes"
+  OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
+  OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal
+  TARGET_COMPILE_PDB = _deps/catch2-build/src/CMakeFiles/Catch2.dir/Catch2.pdb
+  TARGET_PDB = _deps/catch2-build/src/libCatch2d.pdb
+
+build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_context.cpp.o: CXX_COMPILER__Catch2_Debug /Users/berginjack/Desktop/Github_Work/College$ Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/internal/catch_context.cpp || cmake_object_order_depends_target_Catch2
+  DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_context.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
+  INCLUDES = -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/.." -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/generated-includes"
+  OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
+  OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal
+  TARGET_COMPILE_PDB = _deps/catch2-build/src/CMakeFiles/Catch2.dir/Catch2.pdb
+  TARGET_PDB = _deps/catch2-build/src/libCatch2d.pdb
+
+build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_debug_console.cpp.o: CXX_COMPILER__Catch2_Debug /Users/berginjack/Desktop/Github_Work/College$ Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/internal/catch_debug_console.cpp || cmake_object_order_depends_target_Catch2
+  DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_debug_console.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
+  INCLUDES = -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/.." -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/generated-includes"
+  OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
+  OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal
+  TARGET_COMPILE_PDB = _deps/catch2-build/src/CMakeFiles/Catch2.dir/Catch2.pdb
+  TARGET_PDB = _deps/catch2-build/src/libCatch2d.pdb
+
+build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_debugger.cpp.o: CXX_COMPILER__Catch2_Debug /Users/berginjack/Desktop/Github_Work/College$ Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/internal/catch_debugger.cpp || cmake_object_order_depends_target_Catch2
+  DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_debugger.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
+  INCLUDES = -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/.." -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/generated-includes"
+  OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
+  OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal
+  TARGET_COMPILE_PDB = _deps/catch2-build/src/CMakeFiles/Catch2.dir/Catch2.pdb
+  TARGET_PDB = _deps/catch2-build/src/libCatch2d.pdb
+
+build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_enforce.cpp.o: CXX_COMPILER__Catch2_Debug /Users/berginjack/Desktop/Github_Work/College$ Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/internal/catch_enforce.cpp || cmake_object_order_depends_target_Catch2
+  DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_enforce.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
+  INCLUDES = -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/.." -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/generated-includes"
+  OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
+  OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal
+  TARGET_COMPILE_PDB = _deps/catch2-build/src/CMakeFiles/Catch2.dir/Catch2.pdb
+  TARGET_PDB = _deps/catch2-build/src/libCatch2d.pdb
+
+build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_enum_values_registry.cpp.o: CXX_COMPILER__Catch2_Debug /Users/berginjack/Desktop/Github_Work/College$ Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/internal/catch_enum_values_registry.cpp || cmake_object_order_depends_target_Catch2
+  DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_enum_values_registry.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
+  INCLUDES = -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/.." -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/generated-includes"
+  OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
+  OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal
+  TARGET_COMPILE_PDB = _deps/catch2-build/src/CMakeFiles/Catch2.dir/Catch2.pdb
+  TARGET_PDB = _deps/catch2-build/src/libCatch2d.pdb
+
+build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_exception_translator_registry.cpp.o: CXX_COMPILER__Catch2_Debug /Users/berginjack/Desktop/Github_Work/College$ Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/internal/catch_exception_translator_registry.cpp || cmake_object_order_depends_target_Catch2
+  DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_exception_translator_registry.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
+  INCLUDES = -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/.." -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/generated-includes"
+  OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
+  OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal
+  TARGET_COMPILE_PDB = _deps/catch2-build/src/CMakeFiles/Catch2.dir/Catch2.pdb
+  TARGET_PDB = _deps/catch2-build/src/libCatch2d.pdb
+
+build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_fatal_condition_handler.cpp.o: CXX_COMPILER__Catch2_Debug /Users/berginjack/Desktop/Github_Work/College$ Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/internal/catch_fatal_condition_handler.cpp || cmake_object_order_depends_target_Catch2
+  DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_fatal_condition_handler.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
+  INCLUDES = -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/.." -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/generated-includes"
+  OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
+  OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal
+  TARGET_COMPILE_PDB = _deps/catch2-build/src/CMakeFiles/Catch2.dir/Catch2.pdb
+  TARGET_PDB = _deps/catch2-build/src/libCatch2d.pdb
+
+build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_floating_point_helpers.cpp.o: CXX_COMPILER__Catch2_Debug /Users/berginjack/Desktop/Github_Work/College$ Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/internal/catch_floating_point_helpers.cpp || cmake_object_order_depends_target_Catch2
+  DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_floating_point_helpers.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
+  INCLUDES = -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/.." -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/generated-includes"
+  OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
+  OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal
+  TARGET_COMPILE_PDB = _deps/catch2-build/src/CMakeFiles/Catch2.dir/Catch2.pdb
+  TARGET_PDB = _deps/catch2-build/src/libCatch2d.pdb
+
+build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_istream.cpp.o: CXX_COMPILER__Catch2_Debug /Users/berginjack/Desktop/Github_Work/College$ Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/internal/catch_istream.cpp || cmake_object_order_depends_target_Catch2
+  DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_istream.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
+  INCLUDES = -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/.." -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/generated-includes"
+  OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
+  OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal
+  TARGET_COMPILE_PDB = _deps/catch2-build/src/CMakeFiles/Catch2.dir/Catch2.pdb
+  TARGET_PDB = _deps/catch2-build/src/libCatch2d.pdb
+
+build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/generators/internal/catch_generators_combined_tu.cpp.o: CXX_COMPILER__Catch2_Debug /Users/berginjack/Desktop/Github_Work/College$ Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/generators/internal/catch_generators_combined_tu.cpp || cmake_object_order_depends_target_Catch2
+  DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/generators/internal/catch_generators_combined_tu.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
+  INCLUDES = -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/.." -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/generated-includes"
+  OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
+  OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/generators/internal
+  TARGET_COMPILE_PDB = _deps/catch2-build/src/CMakeFiles/Catch2.dir/Catch2.pdb
+  TARGET_PDB = _deps/catch2-build/src/libCatch2d.pdb
+
+build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/interfaces/catch_interfaces_combined_tu.cpp.o: CXX_COMPILER__Catch2_Debug /Users/berginjack/Desktop/Github_Work/College$ Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/interfaces/catch_interfaces_combined_tu.cpp || cmake_object_order_depends_target_Catch2
+  DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/interfaces/catch_interfaces_combined_tu.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
+  INCLUDES = -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/.." -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/generated-includes"
+  OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
+  OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/interfaces
+  TARGET_COMPILE_PDB = _deps/catch2-build/src/CMakeFiles/Catch2.dir/Catch2.pdb
+  TARGET_PDB = _deps/catch2-build/src/libCatch2d.pdb
+
+build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/interfaces/catch_interfaces_generatortracker.cpp.o: CXX_COMPILER__Catch2_Debug /Users/berginjack/Desktop/Github_Work/College$ Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/interfaces/catch_interfaces_generatortracker.cpp || cmake_object_order_depends_target_Catch2
+  DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/interfaces/catch_interfaces_generatortracker.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
+  INCLUDES = -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/.." -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/generated-includes"
+  OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
+  OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/interfaces
+  TARGET_COMPILE_PDB = _deps/catch2-build/src/CMakeFiles/Catch2.dir/Catch2.pdb
+  TARGET_PDB = _deps/catch2-build/src/libCatch2d.pdb
+
+build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/interfaces/catch_interfaces_reporter.cpp.o: CXX_COMPILER__Catch2_Debug /Users/berginjack/Desktop/Github_Work/College$ Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/interfaces/catch_interfaces_reporter.cpp || cmake_object_order_depends_target_Catch2
+  DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/interfaces/catch_interfaces_reporter.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
+  INCLUDES = -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/.." -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/generated-includes"
+  OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
+  OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/interfaces
+  TARGET_COMPILE_PDB = _deps/catch2-build/src/CMakeFiles/Catch2.dir/Catch2.pdb
+  TARGET_PDB = _deps/catch2-build/src/libCatch2d.pdb
+
+build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_list.cpp.o: CXX_COMPILER__Catch2_Debug /Users/berginjack/Desktop/Github_Work/College$ Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/internal/catch_list.cpp || cmake_object_order_depends_target_Catch2
+  DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_list.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
+  INCLUDES = -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/.." -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/generated-includes"
+  OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
+  OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal
+  TARGET_COMPILE_PDB = _deps/catch2-build/src/CMakeFiles/Catch2.dir/Catch2.pdb
+  TARGET_PDB = _deps/catch2-build/src/libCatch2d.pdb
+
+build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/matchers/catch_matchers_floating_point.cpp.o: CXX_COMPILER__Catch2_Debug /Users/berginjack/Desktop/Github_Work/College$ Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/matchers/catch_matchers_floating_point.cpp || cmake_object_order_depends_target_Catch2
+  DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/matchers/catch_matchers_floating_point.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
+  INCLUDES = -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/.." -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/generated-includes"
+  OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
+  OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/matchers
+  TARGET_COMPILE_PDB = _deps/catch2-build/src/CMakeFiles/Catch2.dir/Catch2.pdb
+  TARGET_PDB = _deps/catch2-build/src/libCatch2d.pdb
+
+build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/matchers/catch_matchers_string.cpp.o: CXX_COMPILER__Catch2_Debug /Users/berginjack/Desktop/Github_Work/College$ Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/matchers/catch_matchers_string.cpp || cmake_object_order_depends_target_Catch2
+  DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/matchers/catch_matchers_string.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
+  INCLUDES = -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/.." -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/generated-includes"
+  OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
+  OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/matchers
+  TARGET_COMPILE_PDB = _deps/catch2-build/src/CMakeFiles/Catch2.dir/Catch2.pdb
+  TARGET_PDB = _deps/catch2-build/src/libCatch2d.pdb
+
+build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/matchers/catch_matchers_templated.cpp.o: CXX_COMPILER__Catch2_Debug /Users/berginjack/Desktop/Github_Work/College$ Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/matchers/catch_matchers_templated.cpp || cmake_object_order_depends_target_Catch2
+  DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/matchers/catch_matchers_templated.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
+  INCLUDES = -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/.." -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/generated-includes"
+  OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
+  OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/matchers
+  TARGET_COMPILE_PDB = _deps/catch2-build/src/CMakeFiles/Catch2.dir/Catch2.pdb
+  TARGET_PDB = _deps/catch2-build/src/libCatch2d.pdb
+
+build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/catch_message.cpp.o: CXX_COMPILER__Catch2_Debug /Users/berginjack/Desktop/Github_Work/College$ Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/catch_message.cpp || cmake_object_order_depends_target_Catch2
+  DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/catch_message.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
+  INCLUDES = -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/.." -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/generated-includes"
+  OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
+  OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2
+  TARGET_COMPILE_PDB = _deps/catch2-build/src/CMakeFiles/Catch2.dir/Catch2.pdb
+  TARGET_PDB = _deps/catch2-build/src/libCatch2d.pdb
+
+build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_output_redirect.cpp.o: CXX_COMPILER__Catch2_Debug /Users/berginjack/Desktop/Github_Work/College$ Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/internal/catch_output_redirect.cpp || cmake_object_order_depends_target_Catch2
+  DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_output_redirect.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
+  INCLUDES = -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/.." -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/generated-includes"
+  OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
+  OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal
+  TARGET_COMPILE_PDB = _deps/catch2-build/src/CMakeFiles/Catch2.dir/Catch2.pdb
+  TARGET_PDB = _deps/catch2-build/src/libCatch2d.pdb
+
+build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/catch_registry_hub.cpp.o: CXX_COMPILER__Catch2_Debug /Users/berginjack/Desktop/Github_Work/College$ Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/catch_registry_hub.cpp || cmake_object_order_depends_target_Catch2
+  DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/catch_registry_hub.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
+  INCLUDES = -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/.." -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/generated-includes"
+  OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
+  OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2
+  TARGET_COMPILE_PDB = _deps/catch2-build/src/CMakeFiles/Catch2.dir/Catch2.pdb
+  TARGET_PDB = _deps/catch2-build/src/libCatch2d.pdb
+
+build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_combined_tu.cpp.o: CXX_COMPILER__Catch2_Debug /Users/berginjack/Desktop/Github_Work/College$ Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/internal/catch_combined_tu.cpp || cmake_object_order_depends_target_Catch2
+  DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_combined_tu.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
+  INCLUDES = -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/.." -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/generated-includes"
+  OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
+  OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal
+  TARGET_COMPILE_PDB = _deps/catch2-build/src/CMakeFiles/Catch2.dir/Catch2.pdb
+  TARGET_PDB = _deps/catch2-build/src/libCatch2d.pdb
+
+build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_random_number_generator.cpp.o: CXX_COMPILER__Catch2_Debug /Users/berginjack/Desktop/Github_Work/College$ Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/internal/catch_random_number_generator.cpp || cmake_object_order_depends_target_Catch2
+  DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_random_number_generator.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
+  INCLUDES = -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/.." -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/generated-includes"
+  OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
+  OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal
+  TARGET_COMPILE_PDB = _deps/catch2-build/src/CMakeFiles/Catch2.dir/Catch2.pdb
+  TARGET_PDB = _deps/catch2-build/src/libCatch2d.pdb
+
+build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_random_seed_generation.cpp.o: CXX_COMPILER__Catch2_Debug /Users/berginjack/Desktop/Github_Work/College$ Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/internal/catch_random_seed_generation.cpp || cmake_object_order_depends_target_Catch2
+  DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_random_seed_generation.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
+  INCLUDES = -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/.." -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/generated-includes"
+  OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
+  OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal
+  TARGET_COMPILE_PDB = _deps/catch2-build/src/CMakeFiles/Catch2.dir/Catch2.pdb
+  TARGET_PDB = _deps/catch2-build/src/libCatch2d.pdb
+
+build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_reporter_registry.cpp.o: CXX_COMPILER__Catch2_Debug /Users/berginjack/Desktop/Github_Work/College$ Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/internal/catch_reporter_registry.cpp || cmake_object_order_depends_target_Catch2
+  DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_reporter_registry.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
+  INCLUDES = -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/.." -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/generated-includes"
+  OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
+  OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal
+  TARGET_COMPILE_PDB = _deps/catch2-build/src/CMakeFiles/Catch2.dir/Catch2.pdb
+  TARGET_PDB = _deps/catch2-build/src/libCatch2d.pdb
+
+build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_reporter_spec_parser.cpp.o: CXX_COMPILER__Catch2_Debug /Users/berginjack/Desktop/Github_Work/College$ Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/internal/catch_reporter_spec_parser.cpp || cmake_object_order_depends_target_Catch2
+  DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_reporter_spec_parser.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
+  INCLUDES = -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/.." -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/generated-includes"
+  OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
+  OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal
+  TARGET_COMPILE_PDB = _deps/catch2-build/src/CMakeFiles/Catch2.dir/Catch2.pdb
+  TARGET_PDB = _deps/catch2-build/src/libCatch2d.pdb
+
+build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_result_type.cpp.o: CXX_COMPILER__Catch2_Debug /Users/berginjack/Desktop/Github_Work/College$ Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/internal/catch_result_type.cpp || cmake_object_order_depends_target_Catch2
+  DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_result_type.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
+  INCLUDES = -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/.." -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/generated-includes"
+  OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
+  OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal
+  TARGET_COMPILE_PDB = _deps/catch2-build/src/CMakeFiles/Catch2.dir/Catch2.pdb
+  TARGET_PDB = _deps/catch2-build/src/libCatch2d.pdb
+
+build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_run_context.cpp.o: CXX_COMPILER__Catch2_Debug /Users/berginjack/Desktop/Github_Work/College$ Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/internal/catch_run_context.cpp || cmake_object_order_depends_target_Catch2
+  DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_run_context.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
+  INCLUDES = -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/.." -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/generated-includes"
+  OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
+  OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal
+  TARGET_COMPILE_PDB = _deps/catch2-build/src/CMakeFiles/Catch2.dir/Catch2.pdb
+  TARGET_PDB = _deps/catch2-build/src/libCatch2d.pdb
+
+build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_section.cpp.o: CXX_COMPILER__Catch2_Debug /Users/berginjack/Desktop/Github_Work/College$ Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/internal/catch_section.cpp || cmake_object_order_depends_target_Catch2
+  DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_section.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
+  INCLUDES = -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/.." -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/generated-includes"
+  OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
+  OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal
+  TARGET_COMPILE_PDB = _deps/catch2-build/src/CMakeFiles/Catch2.dir/Catch2.pdb
+  TARGET_PDB = _deps/catch2-build/src/libCatch2d.pdb
+
+build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_stdstreams.cpp.o: CXX_COMPILER__Catch2_Debug /Users/berginjack/Desktop/Github_Work/College$ Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/internal/catch_stdstreams.cpp || cmake_object_order_depends_target_Catch2
+  DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_stdstreams.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
+  INCLUDES = -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/.." -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/generated-includes"
+  OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
+  OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal
+  TARGET_COMPILE_PDB = _deps/catch2-build/src/CMakeFiles/Catch2.dir/Catch2.pdb
+  TARGET_PDB = _deps/catch2-build/src/libCatch2d.pdb
+
+build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/catch_session.cpp.o: CXX_COMPILER__Catch2_Debug /Users/berginjack/Desktop/Github_Work/College$ Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/catch_session.cpp || cmake_object_order_depends_target_Catch2
+  DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/catch_session.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
+  INCLUDES = -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/.." -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/generated-includes"
+  OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
+  OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2
+  TARGET_COMPILE_PDB = _deps/catch2-build/src/CMakeFiles/Catch2.dir/Catch2.pdb
+  TARGET_PDB = _deps/catch2-build/src/libCatch2d.pdb
+
+build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_singletons.cpp.o: CXX_COMPILER__Catch2_Debug /Users/berginjack/Desktop/Github_Work/College$ Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/internal/catch_singletons.cpp || cmake_object_order_depends_target_Catch2
+  DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_singletons.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
+  INCLUDES = -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/.." -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/generated-includes"
+  OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
+  OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal
+  TARGET_COMPILE_PDB = _deps/catch2-build/src/CMakeFiles/Catch2.dir/Catch2.pdb
+  TARGET_PDB = _deps/catch2-build/src/libCatch2d.pdb
+
+build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_reusable_string_stream.cpp.o: CXX_COMPILER__Catch2_Debug /Users/berginjack/Desktop/Github_Work/College$ Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/internal/catch_reusable_string_stream.cpp || cmake_object_order_depends_target_Catch2
+  DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_reusable_string_stream.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
+  INCLUDES = -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/.." -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/generated-includes"
+  OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
+  OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal
+  TARGET_COMPILE_PDB = _deps/catch2-build/src/CMakeFiles/Catch2.dir/Catch2.pdb
+  TARGET_PDB = _deps/catch2-build/src/libCatch2d.pdb
+
+build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_stringref.cpp.o: CXX_COMPILER__Catch2_Debug /Users/berginjack/Desktop/Github_Work/College$ Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/internal/catch_stringref.cpp || cmake_object_order_depends_target_Catch2
+  DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_stringref.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
+  INCLUDES = -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/.." -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/generated-includes"
+  OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
+  OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal
+  TARGET_COMPILE_PDB = _deps/catch2-build/src/CMakeFiles/Catch2.dir/Catch2.pdb
+  TARGET_PDB = _deps/catch2-build/src/libCatch2d.pdb
+
+build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_string_manip.cpp.o: CXX_COMPILER__Catch2_Debug /Users/berginjack/Desktop/Github_Work/College$ Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/internal/catch_string_manip.cpp || cmake_object_order_depends_target_Catch2
+  DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_string_manip.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
+  INCLUDES = -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/.." -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/generated-includes"
+  OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
+  OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal
+  TARGET_COMPILE_PDB = _deps/catch2-build/src/CMakeFiles/Catch2.dir/Catch2.pdb
+  TARGET_PDB = _deps/catch2-build/src/libCatch2d.pdb
+
+build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_tag_alias_registry.cpp.o: CXX_COMPILER__Catch2_Debug /Users/berginjack/Desktop/Github_Work/College$ Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/internal/catch_tag_alias_registry.cpp || cmake_object_order_depends_target_Catch2
+  DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_tag_alias_registry.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
+  INCLUDES = -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/.." -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/generated-includes"
+  OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
+  OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal
+  TARGET_COMPILE_PDB = _deps/catch2-build/src/CMakeFiles/Catch2.dir/Catch2.pdb
+  TARGET_PDB = _deps/catch2-build/src/libCatch2d.pdb
+
+build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/catch_test_case_info.cpp.o: CXX_COMPILER__Catch2_Debug /Users/berginjack/Desktop/Github_Work/College$ Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/catch_test_case_info.cpp || cmake_object_order_depends_target_Catch2
+  DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/catch_test_case_info.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
+  INCLUDES = -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/.." -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/generated-includes"
+  OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
+  OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2
+  TARGET_COMPILE_PDB = _deps/catch2-build/src/CMakeFiles/Catch2.dir/Catch2.pdb
+  TARGET_PDB = _deps/catch2-build/src/libCatch2d.pdb
+
+build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_test_case_registry_impl.cpp.o: CXX_COMPILER__Catch2_Debug /Users/berginjack/Desktop/Github_Work/College$ Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/internal/catch_test_case_registry_impl.cpp || cmake_object_order_depends_target_Catch2
+  DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_test_case_registry_impl.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
+  INCLUDES = -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/.." -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/generated-includes"
+  OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
+  OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal
+  TARGET_COMPILE_PDB = _deps/catch2-build/src/CMakeFiles/Catch2.dir/Catch2.pdb
+  TARGET_PDB = _deps/catch2-build/src/libCatch2d.pdb
+
+build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_test_case_tracker.cpp.o: CXX_COMPILER__Catch2_Debug /Users/berginjack/Desktop/Github_Work/College$ Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/internal/catch_test_case_tracker.cpp || cmake_object_order_depends_target_Catch2
+  DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_test_case_tracker.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
+  INCLUDES = -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/.." -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/generated-includes"
+  OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
+  OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal
+  TARGET_COMPILE_PDB = _deps/catch2-build/src/CMakeFiles/Catch2.dir/Catch2.pdb
+  TARGET_PDB = _deps/catch2-build/src/libCatch2d.pdb
+
+build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_test_registry.cpp.o: CXX_COMPILER__Catch2_Debug /Users/berginjack/Desktop/Github_Work/College$ Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/internal/catch_test_registry.cpp || cmake_object_order_depends_target_Catch2
+  DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_test_registry.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
+  INCLUDES = -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/.." -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/generated-includes"
+  OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
+  OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal
+  TARGET_COMPILE_PDB = _deps/catch2-build/src/CMakeFiles/Catch2.dir/Catch2.pdb
+  TARGET_PDB = _deps/catch2-build/src/libCatch2d.pdb
+
+build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_textflow.cpp.o: CXX_COMPILER__Catch2_Debug /Users/berginjack/Desktop/Github_Work/College$ Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/internal/catch_textflow.cpp || cmake_object_order_depends_target_Catch2
+  DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_textflow.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
+  INCLUDES = -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/.." -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/generated-includes"
+  OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
+  OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal
+  TARGET_COMPILE_PDB = _deps/catch2-build/src/CMakeFiles/Catch2.dir/Catch2.pdb
+  TARGET_PDB = _deps/catch2-build/src/libCatch2d.pdb
+
+build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/catch_test_spec.cpp.o: CXX_COMPILER__Catch2_Debug /Users/berginjack/Desktop/Github_Work/College$ Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/catch_test_spec.cpp || cmake_object_order_depends_target_Catch2
+  DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/catch_test_spec.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
+  INCLUDES = -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/.." -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/generated-includes"
+  OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
+  OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2
+  TARGET_COMPILE_PDB = _deps/catch2-build/src/CMakeFiles/Catch2.dir/Catch2.pdb
+  TARGET_PDB = _deps/catch2-build/src/libCatch2d.pdb
+
+build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_test_spec_parser.cpp.o: CXX_COMPILER__Catch2_Debug /Users/berginjack/Desktop/Github_Work/College$ Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/internal/catch_test_spec_parser.cpp || cmake_object_order_depends_target_Catch2
+  DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_test_spec_parser.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
+  INCLUDES = -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/.." -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/generated-includes"
+  OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
+  OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal
+  TARGET_COMPILE_PDB = _deps/catch2-build/src/CMakeFiles/Catch2.dir/Catch2.pdb
+  TARGET_PDB = _deps/catch2-build/src/libCatch2d.pdb
+
+build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/catch_timer.cpp.o: CXX_COMPILER__Catch2_Debug /Users/berginjack/Desktop/Github_Work/College$ Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/catch_timer.cpp || cmake_object_order_depends_target_Catch2
+  DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/catch_timer.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
+  INCLUDES = -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/.." -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/generated-includes"
+  OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
+  OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2
+  TARGET_COMPILE_PDB = _deps/catch2-build/src/CMakeFiles/Catch2.dir/Catch2.pdb
+  TARGET_PDB = _deps/catch2-build/src/libCatch2d.pdb
+
+build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/catch_tostring.cpp.o: CXX_COMPILER__Catch2_Debug /Users/berginjack/Desktop/Github_Work/College$ Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/catch_tostring.cpp || cmake_object_order_depends_target_Catch2
+  DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/catch_tostring.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
+  INCLUDES = -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/.." -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/generated-includes"
+  OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
+  OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2
+  TARGET_COMPILE_PDB = _deps/catch2-build/src/CMakeFiles/Catch2.dir/Catch2.pdb
+  TARGET_PDB = _deps/catch2-build/src/libCatch2d.pdb
+
+build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/catch_totals.cpp.o: CXX_COMPILER__Catch2_Debug /Users/berginjack/Desktop/Github_Work/College$ Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/catch_totals.cpp || cmake_object_order_depends_target_Catch2
+  DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/catch_totals.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
+  INCLUDES = -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/.." -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/generated-includes"
+  OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
+  OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2
+  TARGET_COMPILE_PDB = _deps/catch2-build/src/CMakeFiles/Catch2.dir/Catch2.pdb
+  TARGET_PDB = _deps/catch2-build/src/libCatch2d.pdb
+
+build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/catch_version.cpp.o: CXX_COMPILER__Catch2_Debug /Users/berginjack/Desktop/Github_Work/College$ Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/catch_version.cpp || cmake_object_order_depends_target_Catch2
+  DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/catch_version.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
+  INCLUDES = -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/.." -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/generated-includes"
+  OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
+  OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2
+  TARGET_COMPILE_PDB = _deps/catch2-build/src/CMakeFiles/Catch2.dir/Catch2.pdb
+  TARGET_PDB = _deps/catch2-build/src/libCatch2d.pdb
+
+build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_wildcard_pattern.cpp.o: CXX_COMPILER__Catch2_Debug /Users/berginjack/Desktop/Github_Work/College$ Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/internal/catch_wildcard_pattern.cpp || cmake_object_order_depends_target_Catch2
+  DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_wildcard_pattern.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
+  INCLUDES = -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/.." -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/generated-includes"
+  OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
+  OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal
+  TARGET_COMPILE_PDB = _deps/catch2-build/src/CMakeFiles/Catch2.dir/Catch2.pdb
+  TARGET_PDB = _deps/catch2-build/src/libCatch2d.pdb
+
+build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_xmlwriter.cpp.o: CXX_COMPILER__Catch2_Debug /Users/berginjack/Desktop/Github_Work/College$ Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/internal/catch_xmlwriter.cpp || cmake_object_order_depends_target_Catch2
+  DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_xmlwriter.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
+  INCLUDES = -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/.." -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/generated-includes"
+  OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
+  OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal
+  TARGET_COMPILE_PDB = _deps/catch2-build/src/CMakeFiles/Catch2.dir/Catch2.pdb
+  TARGET_PDB = _deps/catch2-build/src/libCatch2d.pdb
+
+build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_test_case_info_hasher.cpp.o: CXX_COMPILER__Catch2_Debug /Users/berginjack/Desktop/Github_Work/College$ Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/internal/catch_test_case_info_hasher.cpp || cmake_object_order_depends_target_Catch2
+  DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_test_case_info_hasher.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
+  INCLUDES = -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/.." -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/generated-includes"
+  OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
+  OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal
+  TARGET_COMPILE_PDB = _deps/catch2-build/src/CMakeFiles/Catch2.dir/Catch2.pdb
+  TARGET_PDB = _deps/catch2-build/src/libCatch2d.pdb
+
+build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/generators/catch_generators_random.cpp.o: CXX_COMPILER__Catch2_Debug /Users/berginjack/Desktop/Github_Work/College$ Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/generators/catch_generators_random.cpp || cmake_object_order_depends_target_Catch2
+  DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/generators/catch_generators_random.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
+  INCLUDES = -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/.." -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/generated-includes"
+  OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
+  OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/generators
+  TARGET_COMPILE_PDB = _deps/catch2-build/src/CMakeFiles/Catch2.dir/Catch2.pdb
+  TARGET_PDB = _deps/catch2-build/src/libCatch2d.pdb
+
+build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/benchmark/internal/catch_benchmark_combined_tu.cpp.o: CXX_COMPILER__Catch2_Debug /Users/berginjack/Desktop/Github_Work/College$ Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/benchmark/internal/catch_benchmark_combined_tu.cpp || cmake_object_order_depends_target_Catch2
+  DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/benchmark/internal/catch_benchmark_combined_tu.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
+  INCLUDES = -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/.." -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/generated-includes"
+  OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
+  OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/benchmark/internal
+  TARGET_COMPILE_PDB = _deps/catch2-build/src/CMakeFiles/Catch2.dir/Catch2.pdb
+  TARGET_PDB = _deps/catch2-build/src/libCatch2d.pdb
+
+build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/benchmark/detail/catch_stats.cpp.o: CXX_COMPILER__Catch2_Debug /Users/berginjack/Desktop/Github_Work/College$ Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/benchmark/detail/catch_stats.cpp || cmake_object_order_depends_target_Catch2
+  DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/benchmark/detail/catch_stats.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
+  INCLUDES = -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/.." -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/generated-includes"
+  OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
+  OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/benchmark/detail
+  TARGET_COMPILE_PDB = _deps/catch2-build/src/CMakeFiles/Catch2.dir/Catch2.pdb
+  TARGET_PDB = _deps/catch2-build/src/libCatch2d.pdb
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target Catch2
+
+
+#############################################
+# Link the static library _deps/catch2-build/src/libCatch2d.a
+
+build _deps/catch2-build/src/libCatch2d.a: CXX_STATIC_LIBRARY_LINKER__Catch2_Debug _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_automake.cpp.o _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_combined_tu.cpp.o _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_common_base.cpp.o _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_compact.cpp.o _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_console.cpp.o _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_cumulative_base.cpp.o _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_junit.cpp.o _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_multi.cpp.o _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_registrars.cpp.o _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_sonarqube.cpp.o _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_streaming_base.cpp.o _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_tap.cpp.o _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_teamcity.cpp.o _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_xml.cpp.o _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/catch_approx.cpp.o _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_assertion_handler.cpp.o _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/catch_assertion_result.cpp.o _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/matchers/internal/catch_matchers_combined_tu.cpp.o _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_clara.cpp.o _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_commandline.cpp.o _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_source_line_info.cpp.o _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/catch_config.cpp.o _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_case_insensitive_comparisons.cpp.o _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_console_colour.cpp.o _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_context.cpp.o _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_debug_console.cpp.o _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_debugger.cpp.o _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_enforce.cpp.o _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_enum_values_registry.cpp.o _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_exception_translator_registry.cpp.o _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_fatal_condition_handler.cpp.o _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_floating_point_helpers.cpp.o _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_istream.cpp.o _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/generators/internal/catch_generators_combined_tu.cpp.o _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/interfaces/catch_interfaces_combined_tu.cpp.o _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/interfaces/catch_interfaces_generatortracker.cpp.o _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/interfaces/catch_interfaces_reporter.cpp.o _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_list.cpp.o _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/matchers/catch_matchers_floating_point.cpp.o _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/matchers/catch_matchers_string.cpp.o _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/matchers/catch_matchers_templated.cpp.o _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/catch_message.cpp.o _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_output_redirect.cpp.o _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/catch_registry_hub.cpp.o _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_combined_tu.cpp.o _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_random_number_generator.cpp.o _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_random_seed_generation.cpp.o _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_reporter_registry.cpp.o _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_reporter_spec_parser.cpp.o _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_result_type.cpp.o _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_run_context.cpp.o _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_section.cpp.o _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_stdstreams.cpp.o _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/catch_session.cpp.o _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_singletons.cpp.o _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_reusable_string_stream.cpp.o _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_stringref.cpp.o _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_string_manip.cpp.o _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_tag_alias_registry.cpp.o _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/catch_test_case_info.cpp.o _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_test_case_registry_impl.cpp.o _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_test_case_tracker.cpp.o _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_test_registry.cpp.o _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_textflow.cpp.o _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/catch_test_spec.cpp.o _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_test_spec_parser.cpp.o _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/catch_timer.cpp.o _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/catch_tostring.cpp.o _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/catch_totals.cpp.o _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/catch_version.cpp.o _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_wildcard_pattern.cpp.o _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_xmlwriter.cpp.o _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_test_case_info_hasher.cpp.o _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/generators/catch_generators_random.cpp.o _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/benchmark/internal/catch_benchmark_combined_tu.cpp.o _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/benchmark/detail/catch_stats.cpp.o
+  ARCH_FLAGS = -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_COMPILE_PDB = _deps/catch2-build/src/CMakeFiles/Catch2.dir/Catch2.pdb
+  TARGET_FILE = _deps/catch2-build/src/libCatch2d.a
+  TARGET_PDB = _deps/catch2-build/src/libCatch2d.pdb
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target Catch2WithMain
+
+
+#############################################
+# Order-only phony target for Catch2WithMain
+
+build cmake_object_order_depends_target_Catch2WithMain: phony || cmake_object_order_depends_target_Catch2
+
+build _deps/catch2-build/src/CMakeFiles/Catch2WithMain.dir/catch2/internal/catch_main.cpp.o: CXX_COMPILER__Catch2WithMain_Debug /Users/berginjack/Desktop/Github_Work/College$ Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/internal/catch_main.cpp || cmake_object_order_depends_target_Catch2WithMain
+  DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2WithMain.dir/catch2/internal/catch_main.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
+  INCLUDES = -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-src/src/catch2/.." -I"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/generated-includes"
+  OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2WithMain.dir
+  OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2WithMain.dir/catch2/internal
+  TARGET_COMPILE_PDB = _deps/catch2-build/src/CMakeFiles/Catch2WithMain.dir/Catch2WithMain.pdb
+  TARGET_PDB = _deps/catch2-build/src/libCatch2Maind.pdb
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target Catch2WithMain
+
+
+#############################################
+# Link the static library _deps/catch2-build/src/libCatch2Maind.a
+
+build _deps/catch2-build/src/libCatch2Maind.a: CXX_STATIC_LIBRARY_LINKER__Catch2WithMain_Debug _deps/catch2-build/src/CMakeFiles/Catch2WithMain.dir/catch2/internal/catch_main.cpp.o || _deps/catch2-build/src/libCatch2d.a
+  ARCH_FLAGS = -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2WithMain.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_COMPILE_PDB = _deps/catch2-build/src/CMakeFiles/Catch2WithMain.dir/Catch2WithMain.pdb
+  TARGET_FILE = _deps/catch2-build/src/libCatch2Maind.a
+  TARGET_PDB = _deps/catch2-build/src/libCatch2Maind.pdb
+
+
+#############################################
+# Utility command for test
+
+build _deps/catch2-build/src/CMakeFiles/test.util: CUSTOM_COMMAND
+  COMMAND = cd "/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-build/src" && /Applications/CLion.app/Contents/bin/cmake/mac/bin/ctest --force-new-ctest-process
+  DESC = Running tests...
+  pool = console
+  restat = 1
+
+build _deps/catch2-build/src/test: phony _deps/catch2-build/src/CMakeFiles/test.util
+
+
+#############################################
+# Utility command for edit_cache
+
+build _deps/catch2-build/src/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd "/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-build/src" && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build _deps/catch2-build/src/edit_cache: phony _deps/catch2-build/src/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build _deps/catch2-build/src/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd "/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-build/src" && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT" -B"/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug"
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build _deps/catch2-build/src/rebuild_cache: phony _deps/catch2-build/src/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build _deps/catch2-build/src/list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build _deps/catch2-build/src/CMakeFiles/install.util: CUSTOM_COMMAND _deps/catch2-build/src/all
+  COMMAND = cd "/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-build/src" && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -P cmake_install.cmake
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build _deps/catch2-build/src/install: phony _deps/catch2-build/src/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build _deps/catch2-build/src/CMakeFiles/install/local.util: CUSTOM_COMMAND _deps/catch2-build/src/all
+  COMMAND = cd "/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-build/src" && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build _deps/catch2-build/src/install/local: phony _deps/catch2-build/src/CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build _deps/catch2-build/src/CMakeFiles/install/strip.util: CUSTOM_COMMAND _deps/catch2-build/src/all
+  COMMAND = cd "/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-build/src" && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build _deps/catch2-build/src/install/strip: phony _deps/catch2-build/src/CMakeFiles/install/strip.util
+
+# =============================================================================
+# Target aliases.
+
+build Catch2: phony _deps/catch2-build/src/libCatch2d.a
+
+build Catch2WithMain: phony _deps/catch2-build/src/libCatch2Maind.a
+
+build calculator: phony bin/calculator
+
+build generate_parser: phony bin/lexparse/generate_parser
+
+build libCatch2Maind.a: phony _deps/catch2-build/src/libCatch2Maind.a
+
+build libCatch2d.a: phony _deps/catch2-build/src/libCatch2d.a
+
+build parser_lib: phony bin/lexparse/parser_lib
+
+# =============================================================================
+# Folder targets.
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug
+
+build all: phony bin/all test/all
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-build
+
+build _deps/catch2-build/all: phony _deps/catch2-build/src/all
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-build/src
+
+build _deps/catch2-build/src/all: phony _deps/catch2-build/src/libCatch2d.a _deps/catch2-build/src/libCatch2Maind.a
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/bin
+
+build bin/all: phony bin/calculator bin/lexparse/all
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/bin/lexparse
+
+build bin/lexparse/all: phony bin/lexparse/generate_parser bin/lexparse/parser_lib
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/test
+
+build test/all: phony _deps/catch2-build/all
+
+# =============================================================================
+# Built-in targets
+
+
+#############################################
+# Re-run CMake if any of its inputs changed.
+
+build build.ninja: RERUN_CMAKE | ../CMakeLists.txt ../cmake/independent_settings.cmake ../cmake/platform_settings.cmake ../src/CMakeLists.txt ../src/cmake/antlr.cmake ../src/lexparse/CMakeLists.txt ../test/CMakeLists.txt /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeCXXCompiler.cmake.in /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeCXXCompilerABI.cpp /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeCompilerIdDetection.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeDependentOption.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeDetermineCXXCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeDetermineCompileFeatures.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeDetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeDetermineCompilerABI.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeDetermineCompilerId.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeDetermineSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeFindBinUtils.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakePackageConfigHelpers.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeParseImplicitIncludeInfo.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeParseImplicitLinkInfo.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeParseLibraryArchitecture.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeSystem.cmake.in /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeTestCXXCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeTestCompilerCommon.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CheckCXXCompilerFlag.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CheckCXXSourceCompiles.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/ADSP-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/ARMCC-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/ARMClang-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/AppleClang-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/Borland-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/Clang-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/Clang-DetermineCompilerInternal.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/Cray-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/Embarcadero-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/Fujitsu-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/GHS-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/HP-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/IAR-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/Intel-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/MSVC-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/NVHPC-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/NVIDIA-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/PGI-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/PathScale-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/SCO-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/TI-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/Watcom-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/XL-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/FetchContent.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/FetchContent/CMakeLists.cmake.in /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/FindGit.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/FindPackageHandleStandardArgs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/FindPackageMessage.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/GNUInstallDirs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Internal/CheckCompilerFlag.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Internal/CheckFlagCommonConfig.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Internal/CheckSourceCompiles.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Internal/FeatureTesting.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Darwin-Determine-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/UnixPaths.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/WriteBasicConfigVersionFile.cmake CMakeCache.txt CMakeFiles/3.23.2/CMakeCXXCompiler.cmake CMakeFiles/3.23.2/CMakeSystem.cmake _deps/catch2-src/CMake/CatchConfigOptions.cmake _deps/catch2-src/CMake/CatchMiscFunctions.cmake _deps/catch2-src/CMakeLists.txt _deps/catch2-src/src/CMakeLists.txt _deps/catch2-src/src/catch2/catch_user_config.hpp.in
+  pool = console
+
+
+#############################################
+# A missing CMake input file is not an error.
+
+build ../CMakeLists.txt ../cmake/independent_settings.cmake ../cmake/platform_settings.cmake ../src/CMakeLists.txt ../src/cmake/antlr.cmake ../src/lexparse/CMakeLists.txt ../test/CMakeLists.txt /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeCXXCompiler.cmake.in /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeCXXCompilerABI.cpp /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeCompilerIdDetection.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeDependentOption.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeDetermineCXXCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeDetermineCompileFeatures.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeDetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeDetermineCompilerABI.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeDetermineCompilerId.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeDetermineSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeFindBinUtils.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakePackageConfigHelpers.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeParseImplicitIncludeInfo.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeParseImplicitLinkInfo.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeParseLibraryArchitecture.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeSystem.cmake.in /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeTestCXXCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeTestCompilerCommon.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CheckCXXCompilerFlag.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CheckCXXSourceCompiles.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/ADSP-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/ARMCC-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/ARMClang-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/AppleClang-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/Borland-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/Clang-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/Clang-DetermineCompilerInternal.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/Cray-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/Embarcadero-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/Fujitsu-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/GHS-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/HP-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/IAR-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/Intel-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/MSVC-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/NVHPC-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/NVIDIA-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/PGI-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/PathScale-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/SCO-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/TI-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/Watcom-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/XL-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/FetchContent.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/FetchContent/CMakeLists.cmake.in /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/FindGit.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/FindPackageHandleStandardArgs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/FindPackageMessage.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/GNUInstallDirs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Internal/CheckCompilerFlag.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Internal/CheckFlagCommonConfig.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Internal/CheckSourceCompiles.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Internal/FeatureTesting.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Darwin-Determine-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/UnixPaths.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/WriteBasicConfigVersionFile.cmake CMakeCache.txt CMakeFiles/3.23.2/CMakeCXXCompiler.cmake CMakeFiles/3.23.2/CMakeSystem.cmake _deps/catch2-src/CMake/CatchConfigOptions.cmake _deps/catch2-src/CMake/CatchMiscFunctions.cmake _deps/catch2-src/CMakeLists.txt _deps/catch2-src/src/CMakeLists.txt _deps/catch2-src/src/catch2/catch_user_config.hpp.in: phony
+
+
+#############################################
+# Clean all the built files.
+
+build clean: CLEAN
+
+
+#############################################
+# Print all primary targets available.
+
+build help: HELP
+
+
+#############################################
+# Make the all target the default.
+
+default all
