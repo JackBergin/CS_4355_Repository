@@ -2,15 +2,10 @@
     "configurations": [
         {
             "name": "Mac",
-            "browse": {
-                "databaseFilename": "",
-                "limitSymbolsToIncludedHeaders": true
-            },
             "includePath": [
                 "${workspaceFolder}/**",
-                "${workspaceFolder}/ANTLR_ROOT/runtime/src",
-                "${workspaceFolder}/ANTLR_ROOT/runtime/src",
-                "${workspaceFolder}/PROJECT_ROOT/antlr/include/**"
+                "${workspaceFolder}/PROJECT_ROOT/antlr/include",
+                "${workspaceFolder}/ANTLR_ROOT/runtime/src"
             ],
             "defines": [],
             "macFrameworkPath": [

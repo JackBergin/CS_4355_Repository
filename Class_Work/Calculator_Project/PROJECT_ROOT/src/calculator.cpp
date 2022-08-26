@@ -1,6 +1,6 @@
 #include <iostream>
 #include "antlr4-runtime.h"
-#include "generated/CalculatorLexer.h"
+#include "CalculatorLexer.h"
 #include "generated/CalculatorParser.h"
 
 
