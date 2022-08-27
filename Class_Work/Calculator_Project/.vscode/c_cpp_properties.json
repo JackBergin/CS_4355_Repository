@@ -3,9 +3,7 @@
         {
             "name": "Mac",
             "includePath": [
-                "${workspaceFolder}/**",
-                "${workspaceFolder}/PROJECT_ROOT/antlr/include",
-                "${workspaceFolder}/ANTLR_ROOT/runtime/src"
+                "${workspaceFolder}/**"
             ],
             "defines": [],
             "macFrameworkPath": [
