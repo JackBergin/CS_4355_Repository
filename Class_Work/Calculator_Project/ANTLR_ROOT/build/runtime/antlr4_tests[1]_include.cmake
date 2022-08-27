@@ -1,5 +1,0 @@
-if(EXISTS "/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/ANTLR_ROOT/build/runtime/antlr4_tests[1]_tests.cmake")
-  include("/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/ANTLR_ROOT/build/runtime/antlr4_tests[1]_tests.cmake")
-else()
-  add_test(antlr4_tests_NOT_BUILT antlr4_tests_NOT_BUILT)
-endif()

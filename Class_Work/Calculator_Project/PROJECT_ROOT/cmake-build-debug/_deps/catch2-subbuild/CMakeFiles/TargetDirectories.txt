@@ -1,3 +1,0 @@
-/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-subbuild/CMakeFiles/catch2-populate.dir
-/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-subbuild/CMakeFiles/edit_cache.dir
-/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/PROJECT_ROOT/cmake-build-debug/_deps/catch2-subbuild/CMakeFiles/rebuild_cache.dir

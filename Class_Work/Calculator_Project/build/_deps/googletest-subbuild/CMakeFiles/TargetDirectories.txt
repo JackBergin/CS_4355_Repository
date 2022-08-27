@@ -1,3 +1,0 @@
-/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/build/_deps/googletest-subbuild/CMakeFiles/googletest-populate.dir
-/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/build/_deps/googletest-subbuild/CMakeFiles/edit_cache.dir
-/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Class_Work/Calculator_Project/build/_deps/googletest-subbuild/CMakeFiles/rebuild_cache.dir
