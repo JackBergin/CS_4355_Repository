@@ -1,4 +1,4 @@
-// Generated from /Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Projects/CalculatorProject/PROJECT_ROOT/src/lexparse/Calculator.g4 by ANTLR 4.9.2
+// Generated from Calculator.g4 by ANTLR 4.10.1
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
 public class CalculatorParser extends Parser {
-	static { RuntimeMetaData.checkVersion("4.9.2", RuntimeMetaData.VERSION); }
+	static { RuntimeMetaData.checkVersion("4.10.1", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
 	protected static final PredictionContextCache _sharedContextCache =
@@ -126,9 +126,10 @@ public class CalculatorParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\25\b\4\2\t\2\3\2"+
-		"\3\2\3\2\3\2\2\2\3\2\2\2\2\6\2\4\3\2\2\2\4\5\7\25\2\2\5\6\7\2\2\3\6\3"+
-		"\3\2\2\2\2";
+		"\u0004\u0001\u0013\u0006\u0002\u0000\u0007\u0000\u0001\u0000\u0001\u0000"+
+		"\u0001\u0000\u0001\u0000\u0000\u0000\u0001\u0000\u0000\u0000\u0004\u0000"+
+		"\u0002\u0001\u0000\u0000\u0000\u0002\u0003\u0005\u0013\u0000\u0000\u0003"+
+		"\u0004\u0005\u0000\u0000\u0001\u0004\u0001\u0001\u0000\u0000\u0000\u0000";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

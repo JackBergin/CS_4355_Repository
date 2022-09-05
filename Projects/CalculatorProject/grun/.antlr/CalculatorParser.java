@@ -1,4 +1,4 @@
-// Generated from /Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Projects/CalculatorProject/PROJECT_ROOT/src/lexparse/Calculator.g4 by ANTLR 4.9.2
+// Generated from /Users/berginjack/Desktop/grun/Calculator.g4 by ANTLR 4.9.2
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
@@ -16,9 +16,7 @@ public class CalculatorParser extends Parser {
 	protected static final PredictionContextCache _sharedContextCache =
 		new PredictionContextCache();
 	public static final int
-		ASSIGN=1, DIVIDE=2, EQUAL=3, GREATER=4, LESS=5, MINUS=6, MULTIPLY=7, NOT=8, 
-		PLUS=9, UNEQUAL=10, LPAR=11, RPAR=12, SEMICOLON=13, FALSE=14, TRUE=15, 
-		INTEGER=16, VARIABLE=17, WS=18, ANY=19;
+		ANY=1;
 	public static final int
 		RULE_text = 0;
 	private static String[] makeRuleNames() {
@@ -30,16 +28,12 @@ public class CalculatorParser extends Parser {
 
 	private static String[] makeLiteralNames() {
 		return new String[] {
-			null, "':='", "'/'", "'='", "'>'", "'<'", "'-'", "'*'", "'~'", "'+'", 
-			"'~='", "'('", "')'", "';'", "'false'", "'true'"
 		};
 	}
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
 	private static String[] makeSymbolicNames() {
 		return new String[] {
-			null, "ASSIGN", "DIVIDE", "EQUAL", "GREATER", "LESS", "MINUS", "MULTIPLY", 
-			"NOT", "PLUS", "UNEQUAL", "LPAR", "RPAR", "SEMICOLON", "FALSE", "TRUE", 
-			"INTEGER", "VARIABLE", "WS", "ANY"
+			null, "ANY"
 		};
 	}
 	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
@@ -126,9 +120,9 @@ public class CalculatorParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\25\b\4\2\t\2\3\2"+
-		"\3\2\3\2\3\2\2\2\3\2\2\2\2\6\2\4\3\2\2\2\4\5\7\25\2\2\5\6\7\2\2\3\6\3"+
-		"\3\2\2\2\2";
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\3\b\4\2\t\2\3\2\3"+
+		"\2\3\2\3\2\2\2\3\2\2\2\2\6\2\4\3\2\2\2\4\5\7\3\2\2\5\6\7\2\2\3\6\3\3\2"+
+		"\2\2\2";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {
