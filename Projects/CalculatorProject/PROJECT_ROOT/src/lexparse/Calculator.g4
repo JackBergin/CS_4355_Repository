@@ -3,7 +3,10 @@
  */
 grammar Calculator;
 
-text: ANY EOF;
+program: (exprs += expression ';')* EOF;
+plusExpr: e1 += expression '+' expression;
+multExpr: e2 += expression '*' expression;
+expression: INTEGER;
 
 // Lexer rules Operators
 ASSIGN: ':=';

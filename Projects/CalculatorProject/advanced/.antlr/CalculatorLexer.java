@@ -1,4 +1,4 @@
-// Generated from /Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Projects/CalculatorProject/grun/Calculator.g4 by ANTLR 4.9.2
+// Generated from /Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Projects/CalculatorProject/grun copy/Advanced.g4 by ANTLR 4.9.2
 import org.antlr.v4.runtime.Lexer;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.Token;
@@ -91,7 +91,7 @@ public class CalculatorLexer extends Lexer {
 	}
 
 	@Override
-	public String getGrammarFileName() { return "Calculator.g4"; }
+	public String getGrammarFileName() { return "Advanced.g4"; }
 
 	@Override
 	public String[] getRuleNames() { return ruleNames; }
