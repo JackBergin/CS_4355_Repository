@@ -1,12 +1,23 @@
-/*
- * Grammar file for the Calculator application.
- */
 grammar Calculator;
 
-program: (exprs += expression ';')* EOF;
-plusExpr: e1 += expression '+' expression;
-multExpr: e2 += expression '*' expression;
-expression: INTEGER;
+program: (exprs += expression ';')+ EOF;
+
+booleanConstant: TRUE | FALSE;
+assignExpression: <assoc = right>VARIABLE ':=' expression;
+//varExpression: <assoc = left>TYPE ' ' expression;
+
+expression:
+	'(' expression ')'
+	| <assoc = right> '-' expression
+	| <assoc = right> '~' expression
+	| expression ('*' | '/') expression
+	| expression ('+' | '-') expression
+	| expression ('<' | '>') expression
+	| <assoc = right> expression ('=' | '~=') expression
+	| assignExpression
+	| booleanConstant
+	| VARIABLE
+	| INTEGER;
 
 // Lexer rules Operators
 ASSIGN: ':=';
@@ -32,5 +43,6 @@ TRUE: 'true';
 // Other
 INTEGER: [0-9]+;
 VARIABLE: [a-zA-Z]+;
+TYPE: 'int' | 'bool' | 'string';
 
 WS: [ \n\t\r]+ -> skip;

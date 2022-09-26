@@ -4,6 +4,7 @@ program: (exprs += expression ';')+ EOF;
 
 booleanConstant: TRUE | FALSE;
 assignExpression: <assoc = right>VARIABLE ':=' expression;
+//varExpression: <assoc = left>TYPE ' ' expression;
 
 expression:
 	'(' expression ')'
@@ -42,5 +43,6 @@ TRUE: 'true';
 // Other
 INTEGER: [0-9]+;
 VARIABLE: [a-zA-Z]+;
+TYPE: 'int' | 'bool' | 'string';
 
 WS: [ \n\t\r]+ -> skip;

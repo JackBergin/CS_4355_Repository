@@ -17,4 +17,3 @@ class TestErrorListener: public antlr4::BaseErrorListener {
     throw std::invalid_argument("test error thrown");
   }
 };
-

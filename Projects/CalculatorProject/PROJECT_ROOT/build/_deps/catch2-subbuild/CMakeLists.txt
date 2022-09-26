@@ -22,8 +22,8 @@ set_property(GLOBAL PROPERTY _CMAKE_FindGit_GIT_EXECUTABLE_VERSION
 include(ExternalProject)
 ExternalProject_Add(catch2-populate
                      "UPDATE_DISCONNECTED" "False" "GIT_REPOSITORY" "https://github.com/catchorg/Catch2.git" "GIT_TAG" "v3.0.1"
-                    SOURCE_DIR          "/Users/berginjack/Desktop/College Work/Senior Year/Term 1/CS 4533/CalculatorProject/PROJECT_ROOT/build/_deps/catch2-src"
-                    BINARY_DIR          "/Users/berginjack/Desktop/College Work/Senior Year/Term 1/CS 4533/CalculatorProject/PROJECT_ROOT/build/_deps/catch2-build"
+                    SOURCE_DIR          "/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Projects/CalculatorProject/PROJECT_ROOT/build/_deps/catch2-src"
+                    BINARY_DIR          "/Users/berginjack/Desktop/Github_Work/College Projects/CS_4355_Repository/Projects/CalculatorProject/PROJECT_ROOT/build/_deps/catch2-build"
                     CONFIGURE_COMMAND   ""
                     BUILD_COMMAND       ""
                     INSTALL_COMMAND     ""
