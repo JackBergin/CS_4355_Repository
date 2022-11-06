@@ -1,0 +1,4 @@
+cmake -S . -B build && cmake --build build
+build/bin/wplc -o wpl.ll wpl.wpl && cat wpl.ll
+clang -o wpl wpl.ll wpl_runtime.c && wpl
+

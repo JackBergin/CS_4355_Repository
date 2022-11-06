@@ -1,0 +1,17 @@
+(*
+ * We know that n is odd, so just start with 3
+ *)
+
+extern str func printf(...);
+
+int func program() {
+    int i <- 3;
+    i <- (i + 2);
+    select {
+        false: printf("HI\n");
+        true: printf("HI2\n");
+    }
+    i <- (i + i);
+    return 0;
+}
+
